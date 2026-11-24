@@ -1,4 +1,4 @@
-import { recordPlaceSave, saveCountsEnabled } from './save-count.mjs';
+import { recordPlaceSave, saveCountsEnabled } from './save-count.mjs?v=enabled';
 import { readPersonalRoutes, writePersonalRoutes } from './route-library.mjs';
 import {collectionArt} from './genre-art.mjs';
 import {GROUPS,readState,stateURL,matchPlaces,genreCats,mapURL} from './core.mjs';
