@@ -96,7 +96,9 @@ function illustratedGenres(){
   return genres.filter(genre => collectionArt.has(genre.id)).map(genre => {
     const { sheet, x, y, width, height } = collectionArt.get(genre.id);
     const href = stateURL({ genre: 'category:' + genre.id, region: state.region });
-    const frame = [
+    const frame = genre.id === "sweets"
+      ? "aspect-ratio:1;--sheet-width:100%;background-image:url(assets/images/genre-cards/sweets.webp)"
+      : [
       'aspect-ratio:' + width + '/' + height,
       '--sheet-width:' + (1086 / width * 100) + '%',
       'background-position:' + (x / (1086 - width) * 100) + '% ' + (y / (1448 - height) * 100) + '%',
