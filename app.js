@@ -64,7 +64,27 @@ function homeSearch() {
   </form>`;
 }
 
-function cards(){return GROUPS.map(g=>{const n=matchPlaces(places,{genre:g.id,region:state.region},genres).length;return `<a class="genre-card" href="${stateURL({genre:g.id,region:state.region})}"><div class="genre-art"><svg viewBox="${g.crop.join(' ')}" role="img" aria-label="${esc(g.name)} illustration"><image href="assets/images/genre-cards/reference.png" width="1536" height="1024"/></svg></div><h2>${ui(g.name, g.ja)}</h2><p>${placeCount(n)}</p></a>`}).join('')}
+function genreCaption(name, japanese, count) {
+  return `<span class="genre-caption">
+    <span class="genre-caption-name">${ui(name, japanese)}</span>
+    <span class="genre-caption-count">${placeCount(count)}</span>
+  </span>`;
+}
+
+function cards() {
+  return GROUPS.map(group => {
+    const filters = { genre: group.id, region: state.region };
+    const count = matchPlaces(places, filters, genres).length;
+    return `<a class="genre-card" href="${stateURL(filters)}">
+      <div class="genre-art">
+        <svg viewBox="${group.crop.join(' ')}" aria-hidden="true">
+          <image href="assets/images/genre-cards/reference.png" width="1536" height="1024"/>
+        </svg>
+      </div>
+      ${genreCaption(group.name, group.ja, count)}
+    </a>`;
+  }).join('');
+}
 function illustratedGenres(){
   const counts = new Map();
   for (const place of places) {
@@ -84,12 +104,40 @@ function illustratedGenres(){
       <div class="collection-art" style="${frame}">
         <img src="assets/images/genre-cards/collection-${sheet}.webp" alt="" loading="lazy" decoding="async">
       </div>
-      <h3>${ui(genre.name, genreJapanese[genre.id])}</h3><p>${placeCount(counts.get(genre.name) || 0)}</p>
+      ${genreCaption(genre.name, genreJapanese[genre.id], counts.get(genre.name) || 0)}
     </a>`;
   }).join('');
 }
 function genreLinks(){return genres.map(g=>{const n=places.filter(p=>p.cat===g.name&&(!state.region||p.city===state.region)).length;return `<a class="chip" href="${stateURL({genre:'category:'+g.id,region:state.region})}">${ui(g.name,genreJapanese[g.id])} <small>${n}</small></a>`}).join('')}
-function home(){return homeSearch()+`<div class="section-top"><h1>${ui('EXPLORE BY GENRE','ジャンルから探す')}</h1><p>${state.region||'21 regions'} / ${places.filter(p=>!state.region||p.city===state.region).length} places</p></div><div class="genre-grid">${cards()}</div><section class="genre-collection"><div class="section-top"><h2>${ui('MORE GENRES','ほかのジャンル')}</h2><p>${collectionArt.size} illustrated genres</p></div><div class="genre-grid">${illustratedGenres()}</div></section><details class="all-genres"><summary>${ui('Browse all ' + genres.length + ' genres','すべてのジャンルから探す')}</summary><div class="genre-links">${genreLinks()}</div></details><div class="explore-all"><a class="text-link" href="${stateURL({page:'explore',region:state.region})}">${ui('View all places →','すべてのお店・スポットを見る')}</a></div>`}
+function home() {
+  const count = places.filter(place => !state.region || place.city === state.region).length;
+  const scope = state.region || `${unique(places.map(place => place.city)).length} regions`;
+  return `${homeSearch()}
+    <div class="section-top">
+      <h1>${ui('Explore by Genre','ジャンルから探す')}</h1>
+      <div class="genre-index-note">
+        <p>${esc(scope)} · ${placeCount(count)}</p>
+        <a href="#more-genres">${ui('More genres ↓','ほかのジャンルへ')}</a>
+      </div>
+    </div>
+    <div class="genre-grid">${cards()}</div>
+    <section class="genre-collection" id="more-genres" aria-labelledby="more-genres-title">
+      <div class="section-top">
+        <h2 id="more-genres-title">${ui('More Genres','ほかのジャンル')}</h2>
+        <p>${collectionArt.size} illustrated genres</p>
+      </div>
+      <div class="genre-grid">${illustratedGenres()}</div>
+    </section>
+    <details class="all-genres">
+      <summary>${ui('Browse all ' + genres.length + ' genres','すべてのジャンルから探す')}</summary>
+      <div class="genre-links">${genreLinks()}</div>
+    </details>
+    <div class="explore-all">
+      <a class="text-link" href="${stateURL({page:'explore',region:state.region})}">
+        ${ui('View all places →','すべてのお店・スポットを見る')}
+      </a>
+    </div>`;
+}
 const fieldNames = {
   hours: ['Opening hours','営業時間'], closed: ['Closed','定休日'],
   reservation: ['Reservations','予約'], address: ['Address','住所'],

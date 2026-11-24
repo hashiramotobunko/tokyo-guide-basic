@@ -85,9 +85,9 @@
 
 
 .home-page {
-  --paper: #f6f2e9;
-  --ink: #211e1b;
-  --accent: #a43122;
+  --paper: #f8f6ef;
+  --ink: #222420;
+  --accent: #923e2e;
   background: var(--paper);
   color: var(--ink);
 }
@@ -110,10 +110,10 @@
   grid-area: 2 / 1 / 3 / -1;
   display: block;
   width: 100%;
-  padding: 20px 0 17px;
+  padding: 24px 0 20px;
   border-block: 1px solid var(--ink);
-  font: 900 clamp(40px, 8.6vw, 114px)/.88 'Arial Black', Arial, sans-serif;
-  letter-spacing: -.085em;
+  font: 800 clamp(40px, 7.9vw, 102px)/.91 Georgia, 'Times New Roman', serif;
+  letter-spacing: -.072em;
   white-space: normal;
 }
 .home-page .brand b { color: var(--accent); font-weight: inherit; }
@@ -129,7 +129,7 @@
   grid-template-columns: 1.7fr 1fr 1fr 1.25fr auto;
   gap: 10px;
   padding: 16px 0;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid #b8b4a7;
 }
 .home-search label {
   display: grid;
@@ -166,7 +166,6 @@
 }
 .home-page .genre-card { text-align: left; }
 .home-page .genre-art, .home-page .collection-art { border-radius: 0; }
-.home-page .genre-card h2, .home-page .genre-card h3 { margin: 8px 0 4px; }
 .home-page .genre-collection { border-top-color: var(--ink); }
 
 @media (max-width: 850px) {
@@ -203,12 +202,46 @@ nav .ui-ja { text-decoration: none; }
 .home-search label, .search-form label, .filters label { grid-template-rows: auto auto; }
 .home-search label .ui-ja, .search-form label .ui-ja, .filters label .ui-ja { margin-top: -4px; }
 .home-search label, .search-form label, .filters label { align-content: end; }
-.home-page .genre-card h2, .home-page .genre-card h3 {
-  font-size: 16px;
-  line-height: 1.2;
+/* Every illustration uses the same compact caption. */
+.genre-caption {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 6px;
+  padding: 6px 0 0;
+  margin-top: 6px;
+  border-top: 1px solid #c9c4b7;
+  font: 700 9px/1.4 Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+  letter-spacing: .045em;
 }
-.home-page .genre-card h2 .ui-ja, .home-page .genre-card h3 .ui-ja { font-size: 10px; }
-.home-page .genre-card p { font-size: 9px; }
+.genre-caption-name { overflow-wrap: anywhere; }
+.genre-caption-name .ui-ja {
+  font-size: 8px;
+  color: #55564e;
+  margin-top: 2px;
+}
+.genre-caption-count {
+  color: #55564e;
+  font-weight: 400;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.genre-index-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: end;
+  gap: 6px 18px;
+}
+.genre-index-note a {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+}
+.genre-index-note a:hover,
+.genre-index-note a:focus-visible { text-decoration: underline; }
+.genre-index-note .ui-ja { font-size: 9px; }
+#more-genres { scroll-margin-top: 15px; }
 .saved-instructions {
   margin: 0 0 28px;
   padding: 18px 22px;
@@ -224,8 +257,8 @@ nav .ui-ja { text-decoration: none; }
 .about-copy h2 { font: 600 26px Georgia, serif; margin: 26px 0 6px; }
 @media (max-width: 560px) {
   .home-page .brand { margin-top: 0; }
-  .home-page .genre-card h2, .home-page .genre-card h3 { font-size: 14px; }
-  .home-page .genre-card h2 .ui-ja, .home-page .genre-card h3 .ui-ja { font-size: 9px; }
+  .genre-caption { font-size: 8px; }
+  .genre-index-note { justify-content: start; }
 }
 .home-page .section-top .ui-ja,
 .genre-hero h1 .ui-ja {
