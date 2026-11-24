@@ -4,8 +4,8 @@ export const visitorNotes = {
     "ja": "桜田門近くの時計塔は皇居ランの目印。城壁の足元に東京の日常が見える。"
   },
   "Tokyo|0x60188bbe135743b3:0xee3b158505f63c95": {
-    "en": "Approach this former Edo Castle gate from the moat and follow the turn between its stone walls. The bend makes sense when you imagine defending a castle entrance.",
-    "ja": "堀から門へ歩くと、直角に折れる江戸城の守りを体感できる。"
+    "en": "Walk through the stone gateway of Edo Castle and look across the road at Tokyo’s police headquarters. In a Japanese detective drama, a call from “Sakuradamon” can mean a call from the Metropolitan Police. This gate gave the force its nickname.",
+    "ja": "江戸城の桜田門を出ると、向かいに警視庁が見える。刑事ドラマで耳にする「桜田門」は、門前に本部を構える警視庁の通り名でもある。"
   },
   "Tokyo|0x60188c08ff09e7ef:0xeaea5e2756b206ff": {
     "en": "Visitors arriving on official business once entered Edo Castle here. Follow their approach across the moat towards the Imperial Palace East Gardens.",
@@ -52,8 +52,8 @@ export const visitorNotes = {
     "ja": "読売ジャイアンツの本拠地。主催試合ではドームの屋根に応援が響き、大型コンサートの舞台にもなる。"
   },
   "Tokyo|0x60188d89aadfca4d:0xd846ee769ca6898e": {
-    "en": "This was the main stadium for the Tokyo 2020 Olympics and Paralympics. Walk around the exterior to see how the tiers of timber eaves soften the scale of the arena.",
-    "ja": "東京2020大会の主会場。外周を歩くと、巨大な競技場を包む木のひさしがよく見える。"
+    "en": "Two Tokyo Olympics share this patch of ground. The old National Stadium hosted the opening ceremony in 1964. Its successor, recognisable by its tiers of timber eaves, hosted the Tokyo 2020 Games in 2021.",
+    "ja": "この場所で東京は二度、五輪を迎えた。1964年に開会式が開かれた旧国立競技場の跡地に、木のひさしを重ねた今の競技場が建ち、2021年開催の東京2020大会の主会場となった。"
   },
   "Tokyo|0x60188cdb568a6c15:0x4c84ac4975ce203": {
     "en": "Artists shop here for the tools behind the finished work. Browse brushes, pens, paper and drawing supplies for a Tokyo souvenir you can actually use.",
@@ -72,8 +72,8 @@ export const visitorNotes = {
     "ja": "靖国神社の参道に立つ近代日本の軍制に関わった大村益次郎の銅像。"
   },
   "Tokyo|0x60188bf14f2d21f9:0xb0e118ba4e4e5f87": {
-    "en": "Outside the Imperial Palace, a bronze horseman represents Kusunoki Masashige, a medieval warrior remembered for his loyalty to the emperor. Circle the statue to see the horse caught mid-stride.",
-    "ja": "皇居外苑の騎馬像。南北朝時代の武将・楠木正成を、躍動する馬とともに表現している。"
+    "en": "The rider facing Nijubashi Bridge is welcoming an emperor home. In 1333 Kusunoki Masashige met Emperor Go-Daigo in Hyogo on his return from exile. Centuries later the Sumitomo family commissioned that scene as a gift to the imperial household, which is how a meeting in Hyogo came to stand outside the palace in Tokyo.",
+    "ja": "二重橋を向く騎馬武者は、都へ帰る天皇を迎えている。題材は1333年、隠岐から戻る後醍醐天皇を楠木正成が兵庫で迎えた場面。明治に住友家が皇室への献納を願って制作を依頼し、兵庫での出迎えが東京の皇居前に姿をとどめた。"
   },
   "Tokyo|0x60188bf09e4ea919:0xff4be92edd7478cc": {
     "en": "The ginkgo avenue frames Japan’s national parliament building. In autumn the fan-shaped leaves turn yellow, giving the formal approach a striking foreground.",
@@ -84,8 +84,8 @@ export const visitorNotes = {
     "ja": "旧村井吉兵衛邸の表門を日比谷高校が受け継ぐ。通りから旧邸宅の面影を眺めたい。"
   },
   "Tokyo|0x60188c9a0eb42e39:0x5a174085841c5258": {
-    "en": "The Tokyo Yakult Swallows play outdoors at Jingu Stadium. At a home game, watch the stands for the fans’ miniature umbrellas, part of the team’s cheering tradition.",
-    "ja": "東京ヤクルトスワローズの本拠地。屋外のスタンドで小さな傘が揺れる応援が名物。"
+    "en": "At a Tokyo Yakult Swallows home game, little umbrellas bob in the stands. The name Jingu points to the ballpark’s other identity: Meiji Jingu shrine runs this ground in its outer gardens, and income from the gardens’ facilities helps maintain the shrine.",
+    "ja": "スタンドに小さな傘が揺れる、東京ヤクルトスワローズの本拠地。「神宮」の名のとおり、明治神宮が外苑で運営する球場で、野球を楽しむ人が集う外苑の収益は神宮を支えている。"
   },
   "Tokyo|0x60188cbaf1de5995:0xc2becc88ea4e7eb5": {
     "en": "After Shibuya Scramble Crossing, head to Harajuku for a closer look at Tokyo street style. Opposite Harajuku Station, Takeshita Street puts kawaii accessories, goth fashion and cream-filled crepes on the same short walk.",
@@ -168,8 +168,8 @@ export const visitorNotes = {
     "ja": "東大本郷キャンパスの正門から安田講堂へ並木道が延びる。同じ本郷通り沿いの赤門とは別の入口。"
   },
   "Tokyo|0x60188bb019af22ef:0x5df1bbe84d05a9d4": {
-    "en": "Keio’s Mita campus is tied to educator Fukuzawa Yukichi. Look for the red-brick Old Library to glimpse the university’s early twentieth-century architecture.",
-    "ja": "福澤諭吉ゆかりの三田キャンパス。赤れんがの旧図書館に近代の学び舎の姿が残る。"
+    "en": "Keio began in 1858 when Fukuzawa Yukichi opened a school in Edo to teach Western learning through Dutch books. In 1920 it became Japan’s first private university recognised under the University Ordinance. On the Mita campus, look for the red-brick Old Library.",
+    "ja": "幕末の江戸で福澤諭吉が開いた蘭学塾が慶應の始まり。1858年の小さな塾から、1920年には大学令で日本初の私立大学として認可されるまでに育った。三田では赤れんがの旧図書館を訪ねたい。"
   },
   "Tokyo|0x60188cd7058ad73f:0x908f55935cc13cd3": {
     "en": "Tiny counters and grilling smoke fill the lanes by Shinjuku Station’s west exit. Omoide Yokocho grew from a postwar market; take a counter seat for a close-up view of the grill.",
@@ -232,20 +232,20 @@ export const visitorNotes = {
     "ja": "両手を上げた走者は菓子メーカーの広告から道頓堀の顔に。戎橋から同じポーズで撮影する人も多い。"
   },
   "Osaka|0x6000e6b952436f4d:0x92f854ad19b70657": {
-    "en": "Follow this long Osaka shopping arcade past grocers, snack counters and everyday shops. Choose a section to explore on foot and stop for a bite along the way.",
-    "ja": "食料品店や軽食の店が連なる大阪の長い商店街。区間を決めて食べ歩くと生活の町が見える。"
+    "en": "Start at Osaka Tenmangu shrine and walk into the arcade. This shopping street grew up around its worshippers. In the second block, a croquette counter, a kombu seaweed shop and old coffee houses give you a taste of what people in Osaka take home for supper or stop for on the way.",
+    "ja": "大阪天満宮の門前から続く、天神橋筋のアーケード。二丁目には昆布屋、コロッケ屋、昔ながらの喫茶店が並ぶ。夕飯のおかずを一つ買うつもりで歩くと、天満の商店街がぐっと身近になる。"
   },
   "Osaka|0x6000e6926f5c4759:0xa43c19ec877d7fb5": {
-    "en": "Near Osaka Station, narrow passages lead to counters serving quick meals and drinks. This dining lane opened in 1950 and still makes a good introduction to eating at close quarters in Umeda.",
-    "ja": "大阪駅近くに1950年に生まれた飲食街。細い通路の両側に、短い食事や一杯を楽しむ店が並ぶ。"
+    "en": "In 1950, eighteen small establishments opened near Osaka Station to help former national railway facilities workers earn a living. That railway story is still close at hand: duck into the narrow passage for a counter meal or a quick drink on your way to a train.",
+    "ja": "1950年、旧国鉄の施設関係の退職者を支えようと、大阪駅のそばに18軒が店を開いた。細い通路を抜け、電車に乗る前にカウンターで一杯。鉄道の町・梅田らしい寄り道だ。"
   },
   "Hokkaido|0x5f0b293b0e60d45b:0x2aa910932acb61e5": {
     "en": "Inside Hokkaido University’s Botanic Garden, this historic wooden museum connects natural-history specimens with the early study of Hokkaido. Check the garden’s seasonal opening arrangements.",
     "ja": "北大植物園の中に残る木造の博物館。標本を通じて北海道の自然研究の歩みに触れられる。開園時期を確認したい。"
   },
   "Hokkaido|0x5f0b299f007507ad:0xbb215d6e0de69db7": {
-    "en": "The former Hokkaido Government Office is known in Sapporo as Akarenga, “red brick.” Its brickwork and formal grounds recall the era when the island’s modern administration took shape.",
-    "ja": "札幌で「赤れんが庁舎」と親しまれる北海道庁旧本庁舎。外観と前庭に北海道の近代史が残る。"
+    "en": "Ask for Akarenga in central Sapporo and the name points to the old Hokkaido government office. It means “red brick.” This was the seat of Hokkaido’s government from 1888 for about eighty years; look up from the brick façade to its distinctive dome.",
+    "ja": "札幌で「赤れんが」といえば、北海道庁旧本庁舎。1888年から約80年、ここで道政が動いた。前庭から見上げると、れんが壁の上に八角の塔がのぞく。"
   },
   "Hokkaido|0x5f0b298530a7cfd5:0x2ad2065307072ffd": {
     "en": "Sapporo’s covered shopping arcade gives you a street-level walk even in snow or rain. Follow the numbered blocks to browse local shops and find somewhere to eat.",
