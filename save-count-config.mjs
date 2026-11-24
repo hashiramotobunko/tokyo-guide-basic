@@ -1,2 +1,4 @@
-// Set both values after provisioning and testing the aggregate database.
-export const saveCountConfig = null;
+export const saveCountConfig = {
+  "projectUrl": "https://ufehtbaoqrunujrzllge.supabase.co",
+  "publishableKey": "sb_publishable_rObxvujswTUpJ_vt7ug6oQ_yRL7wOMG"
+};

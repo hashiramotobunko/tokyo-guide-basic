@@ -1,4 +1,4 @@
-import { saveCountConfig } from './save-count-config.mjs';
+import { saveCountConfig } from './save-count-config.mjs?v=enabled';
 
 export const saveCountsEnabled = Boolean(saveCountConfig?.projectUrl && saveCountConfig?.publishableKey);
 
