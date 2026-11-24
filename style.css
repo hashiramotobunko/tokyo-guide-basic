@@ -309,3 +309,13 @@ nav .ui-ja { text-decoration: none; }
   .personal-routes { padding: 14px; }
 }
 .route-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* Keep all genre labels the same size, including the compact text index. */
+.home-page .genre-caption {
+  font-size: 8px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+.home-page .genre-caption-name .ui-ja { font-size: 8px; }
+.genre-index-link { padding: 7px 9px; border-radius: 2px; }
+.genre-index-link .genre-caption { margin: 0; padding: 0; border: 0; }

@@ -1,3 +1,4 @@
+import { recordPlaceSave, saveCountsEnabled } from './save-count.mjs';
 import { readPersonalRoutes, writePersonalRoutes } from './route-library.mjs';
 import {collectionArt} from './genre-art.mjs';
 import {GROUPS,readState,stateURL,matchPlaces,genreCats,mapURL} from './core.mjs';
@@ -108,7 +109,18 @@ function illustratedGenres(){
     </a>`;
   }).join('');
 }
-function genreLinks(){return genres.map(g=>{const n=places.filter(p=>p.cat===g.name&&(!state.region||p.city===state.region)).length;return `<a class="chip" href="${stateURL({genre:'category:'+g.id,region:state.region})}">${ui(g.name,genreJapanese[g.id])} <small>${n}</small></a>`}).join('')}
+function genreLinks() {
+  return genres.map(genre => {
+    const count = places.filter(place =>
+      place.cat === genre.name && (!state.region || place.city === state.region)
+    ).length;
+    const href = stateURL({ genre: 'category:' + genre.id, region: state.region });
+    return `<a class="chip genre-index-link" href="${href}">
+      ${genreCaption(genre.name, genreJapanese[genre.id], count)}
+    </a>`;
+  }).join('');
+}
+
 function home() {
   const count = places.filter(place => !state.region || place.city === state.region).length;
   const scope = state.region || `${unique(places.map(place => place.city)).length} regions`;
@@ -195,6 +207,7 @@ function savedInstructions() {
       <li>In <strong>My Routes</strong>, add saved places as stops, put them in order, and choose <strong>Save route</strong>. Select a route by name to reopen it.</li>
     </ol>
     <p>Your places and routes stay in this browser on this device. No account is needed. They do not sync across devices. Clearing this site's browser data removes them.</p>
+    ${saveCountsEnabled ? '<p>Saving a place adds one to its overall save count. The count does not include your route, name, or account details.</p>' : ''}
   </section>`;
 }
 
@@ -365,6 +378,6 @@ document.addEventListener('change', event => {
     }
   }
 });
-document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.save){const id=b.dataset.save;saved.has(id)?saved.delete(id):saved.add(id);try{localStorage.setItem('shakedown-basic-saved-v1',JSON.stringify([...saved]));toast(saved.has(id)?'Place saved':'Place removed from Saved')}catch{toast('Browser storage is unavailable. Changes will last for this visit only.')}if(state.page==='saved')render();else{b.setAttribute('aria-pressed',saved.has(id));b.textContent=saved.has(id)?'★':'☆';b.setAttribute('aria-label',saveLabel(places.find(p=>p.id===id),saved.has(id)));$('#saved-count').textContent=saved.size}}else if(b.dataset.map){go({view:'map',place:b.dataset.map});$('.map-panel')?.scrollIntoView({block:'start',behavior:'smooth'})}else if(b.dataset.view){go({view:b.dataset.view});$('#results')?.scrollIntoView({block:'start'})}else if(b.dataset.clear){const k=b.dataset.clear;go(k==='filters'?{q:'',region:'',area:'',cat:''}:{[k]:'',...(k==='region'?{area:''}:{})})}else if(b.id==='more'){limit+=36;const y=scrollY;render();scrollTo(0,y)}});
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.save){const id=b.dataset.save;saved.has(id)?saved.delete(id):saved.add(id);try{localStorage.setItem('shakedown-basic-saved-v1',JSON.stringify([...saved]));if(saved.has(id)&&saveCountsEnabled)void recordPlaceSave(id);toast(saved.has(id)?'Place saved':'Place removed from Saved')}catch{toast('Browser storage is unavailable. Changes will last for this visit only.')}if(state.page==='saved')render();else{b.setAttribute('aria-pressed',saved.has(id));b.textContent=saved.has(id)?'★':'☆';b.setAttribute('aria-label',saveLabel(places.find(p=>p.id===id),saved.has(id)));$('#saved-count').textContent=saved.size}}else if(b.dataset.map){go({view:'map',place:b.dataset.map});$('.map-panel')?.scrollIntoView({block:'start',behavior:'smooth'})}else if(b.dataset.view){go({view:b.dataset.view});$('#results')?.scrollIntoView({block:'start'})}else if(b.dataset.clear){const k=b.dataset.clear;go(k==='filters'?{q:'',region:'',area:'',cat:''}:{[k]:'',...(k==='region'?{area:''}:{})})}else if(b.id==='more'){limit+=36;const y=scrollY;render();scrollTo(0,y)}});
 window.addEventListener('popstate',()=>{state=readState(location.search);limit=36;render()});
 try{[places,genres,routes]=await Promise.all(['places','genres','routes'].map(async f=>{const r=await fetch('./data/'+f+'.json');if(!r.ok)throw Error(r.status);return r.json()}));render()}catch(e){$('#main').innerHTML=`<div class="error"><h1>${ui('Could not load the guide','ガイドを読み込めませんでした')}</h1><p>${ui('Check your connection and try again.','接続を確認して再試行してください。')}</p><button onclick="location.reload()">${ui('Try again','再試行')}</button></div>`;console.error(e)}
