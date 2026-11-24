@@ -83,7 +83,6 @@
   .genre-collection h3 { font-size: 17px; }
 }
 
-.site-edition { display: none; }
 
 .home-page {
   --paper: #f6f2e9;
@@ -100,15 +99,6 @@
   max-width: 1200px;
   padding: 14px 32px 0;
   border: 0;
-}
-.home-page .site-edition {
-  display: block;
-  grid-area: 1 / 1;
-  margin: 0;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .15em;
-  text-transform: uppercase;
 }
 .home-page nav { grid-area: 1 / 2; padding: 0 0 13px; }
 .home-page nav a[aria-current=page] {
@@ -188,7 +178,6 @@
     grid-template-columns: 1fr;
     padding: 13px 18px 0;
   }
-  .home-page .site-edition { grid-area: 1 / 1; font-size: 10px; }
   .home-page nav { grid-area: 3 / 1; padding: 13px 0 0; }
   .home-page .brand {
     grid-area: 2 / 1;
@@ -201,3 +190,89 @@
   .home-search input, .home-search select { font-size: 16px; }
   .home-search select { padding-inline: 4px; }
 }
+
+.ui-ja {
+  display: block;
+  margin-top: 3px;
+  font: 400 .68em/1.35 Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  letter-spacing: 0;
+}
+.english-only .ui-ja { display: none; }
+nav .ui-ja { text-decoration: none; }
+.home-page nav { justify-self: end; }
+.home-search label, .search-form label, .filters label { grid-template-rows: auto auto; }
+.home-search label .ui-ja, .search-form label .ui-ja, .filters label .ui-ja { margin-top: -4px; }
+.home-search label, .search-form label, .filters label { align-content: end; }
+.home-page .genre-card h2, .home-page .genre-card h3 {
+  font-size: 16px;
+  line-height: 1.2;
+}
+.home-page .genre-card h2 .ui-ja, .home-page .genre-card h3 .ui-ja { font-size: 10px; }
+.home-page .genre-card p { font-size: 9px; }
+.saved-instructions {
+  margin: 0 0 28px;
+  padding: 18px 22px;
+  background: #f6f2e9;
+  border-left: 3px solid #a43122;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.saved-instructions h2 { margin: 0 0 6px; font: 600 23px Georgia, serif; }
+.saved-instructions ol { margin: 8px 0; padding-left: 20px; }
+.saved-instructions p { margin: 8px 0 0; }
+.saved-instructions a { text-decoration: underline; }
+.about-copy h2 { font: 600 26px Georgia, serif; margin: 26px 0 6px; }
+@media (max-width: 560px) {
+  .home-page .brand { margin-top: 0; }
+  .home-page .genre-card h2, .home-page .genre-card h3 { font-size: 14px; }
+  .home-page .genre-card h2 .ui-ja, .home-page .genre-card h3 .ui-ja { font-size: 9px; }
+}
+.home-page .section-top .ui-ja,
+.genre-hero h1 .ui-ja {
+  font-size: 12px;
+  margin-top: 6px;
+}
+.personal-routes {
+  margin: 0 0 32px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.personal-routes h2 { margin: 0 0 15px; font: 600 25px Georgia, serif; }
+.route-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.route-picker ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; }
+.route-picker p, .route-empty { color: var(--muted); font-size: 13px; }
+.route-picker button[aria-pressed=true] { border-color: #a43122; color: #a43122; }
+.route-editor {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+  margin-top: 18px;
+}
+.route-editor label { display: grid; gap: 5px; font-size: 13px; }
+.route-editor input, .route-editor select {
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid #b9b4aa;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 16px;
+}
+.route-editor button:disabled { opacity: .5; cursor: default; }
+.route-stops, .route-empty { grid-column: 1 / -1; margin: 0; }
+.route-stops { padding-left: 24px; }
+.route-stops li { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.route-stop-name { display: inline-grid; gap: 4px; overflow-wrap: anywhere; }
+.route-stop-name a { text-decoration: underline; font-size: 12px; }
+.route-stop-controls { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.route-submit { justify-self: start; background: #a43122; border-color: #a43122; color: white; }
+.route-submit:hover:enabled { background: #7b2419; color: white; }
+@media (max-width: 600px) {
+  .route-editor { grid-template-columns: minmax(0, 1fr) auto; }
+  .route-editor > label:first-child { grid-column: 1 / -1; }
+  .personal-routes { padding: 14px; }
+}
+.route-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; }
