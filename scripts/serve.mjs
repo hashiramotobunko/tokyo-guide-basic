@@ -1,0 +1,4 @@
+import http from 'node:http';import fs from 'node:fs';import path from 'node:path';
+const a=process.argv.slice(2),port=Number(a[a.indexOf('--port')+1])||4173,host=a.includes('--host')?a[a.indexOf('--host')+1]:'127.0.0.1';
+const mime={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.css':'text/css','.png':'image/png','.webp':'image/webp'};
+http.createServer((req,res)=>{const p=path.resolve('.','.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(!p.startsWith(process.cwd()+path.sep)&&p!==process.cwd()){res.writeHead(403).end();return}const file=p.endsWith('/')||p===process.cwd()?path.join(p,'index.html'):p;fs.readFile(file,(e,b)=>{if(e){res.writeHead(404).end('Not found');return}res.writeHead(200,{'Content-Type':mime[path.extname(file)]||'application/octet-stream'});res.end(b)})}).listen(port,host,()=>console.log(`Serving at http://${host}:${port}/`));

@@ -1,0 +1,282 @@
+[
+  {
+    "id": "sento",
+    "file": "assets/images/genre-heroes/sento.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "銭湯_湯上がりの女性と東京タワー_sento_v1.webp",
+    "sha256": "7efa9c6c6ee1a1ec01d095626591ad543f43680e4a34e729a2f277e022f0a02b"
+  },
+  {
+    "id": "wine-bar",
+    "file": "assets/images/genre-heroes/wine-bar.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "ワインバー_ワインを楽しむ女性と東京タワー_wine-bar_v1.webp",
+    "sha256": "2c228930c4774f1458186cca7a05382dd63660ee858a6cbf0fff241afd41d69c"
+  },
+  {
+    "id": "whisky-bar",
+    "file": "assets/images/genre-heroes/whisky-bar.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "ウイスキーバー_香りを楽しむ女性と東京タワー_whisky-bar_v1.webp",
+    "sha256": "e831f571b665c08548871824ba90da7b83238002f87ae70d38d8d1e883efbc70"
+  },
+  {
+    "id": "sukiyaki",
+    "file": "assets/images/genre-heroes/sukiyaki.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "すき焼き・しゃぶしゃぶ_すき焼きを楽しむ女性と東京タワー_sukiyaki_v1.webp",
+    "sha256": "7aa17f7214280b5ef8ee45c1ed10facc5654c16570f2b759afec76df4fd0eda1"
+  },
+  {
+    "id": "thai",
+    "file": "assets/images/genre-heroes/thai.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "タイ料理_パッタイとトムヤムクン_thai_v1.webp",
+    "sha256": "e55ed643d4b87f13d544a780eb8c685697db010f6f45727a4dd4fca3e60d35fd"
+  },
+  {
+    "id": "unagi",
+    "file": "assets/images/genre-heroes/unagi.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "うなぎ_うな重を味わう女性と東京タワー_unagi_v1.webp",
+    "sha256": "97ed445a00e9ca7a24909cd3683e83982c9e084c8b0b71196da9492116d8d665"
+  },
+  {
+    "id": "sightseeing",
+    "file": "assets/images/genre-heroes/sightseeing.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "観光_東京の街歩き_sightseeing_v1.webp",
+    "sha256": "85de4c8ca48c2f5d0a8497b1d8a536f66b868272ab0f5f0d6d50a0169635fb3a"
+  },
+  {
+    "id": "yakitori",
+    "file": "assets/images/genre-heroes/yakitori.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "焼き鳥_串を味わう女性と東京タワー_yakitori_v1.webp",
+    "sha256": "e4e8fed591208fd3dfe24567d125cc1b9ad79bd48d7fc7bc8fbb59a319a05d40"
+  },
+  {
+    "id": "shopping",
+    "file": "assets/images/genre-heroes/shopping.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "ショッピング_バッグを選ぶ女性と東京タワー_shopping_v1.webp",
+    "sha256": "4e5d9a7f14273c5beb3349c267c1920b772c147418f0ee2e3f02b4cf439794ab"
+  },
+  {
+    "id": "shrine",
+    "file": "assets/images/genre-heroes/shrine.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "神社_朱い鳥居と東京タワー_shrine_v1.webp",
+    "sha256": "a3be34e9cd04121833b07624c3685c979e53c85efd7053b3ec987711e3157fa7"
+  },
+  {
+    "id": "yoshoku",
+    "file": "assets/images/genre-heroes/yoshoku.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "洋食_オムライスを楽しむ女性と東京タワー_yoshoku_v1.webp",
+    "sha256": "14c3148cc91fd585e8cd0e020aec87c54c9952cbf5b1e1d8d51281b6f7769f39"
+  },
+  {
+    "id": "tonkatsu",
+    "file": "assets/images/genre-heroes/tonkatsu.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "とんかつ_とんかつを味わう女性と東京タワー_tonkatsu_v5.webp",
+    "sha256": "206cf0e2fae4e7e9493fc345a1994254cccb5e5aec4288f56765ead9e212c799"
+  },
+  {
+    "id": "sake-bar",
+    "file": "assets/images/genre-heroes/sake-bar.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "日本酒バー_日本酒を味わう女性と東京タワー_sake-bar_v1.webp",
+    "sha256": "e03b2cbd3e1b36acd0f3edc20f4b15dcd2823f925692d6c5b790e1848fdc8c65"
+  },
+  {
+    "id": "activity",
+    "file": "assets/images/genre-heroes/activity.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "アクティビティ_陶芸を楽しむ女性と東京タワー_activity_v1.webp",
+    "sha256": "2c4962ae701aec6efe03064968d3ab5cc40b5459ffa1f94e8595b403a2d06152"
+  },
+  {
+    "id": "landmark",
+    "file": "assets/images/genre-heroes/landmark.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "ランドマーク_東京タワーと街並み_landmark_v1.webp",
+    "sha256": "76c40e6d387e9e3444b4f0d156ca944440384ca4b65968c1b95be97c58cd23ce"
+  },
+  {
+    "id": "shopping-street",
+    "file": "assets/images/genre-heroes/shopping-street.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "商店街_買い物を楽しむ女性と東京タワー_shopping-street_v1.webp",
+    "sha256": "d625d317f7620f2ebac4f7249812102ebe01536f91b6ac631a796fa4ac02a0bd"
+  },
+  {
+    "id": "steak",
+    "file": "assets/images/genre-heroes/steak.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "ステーキ_厚切りビーフと東京タワー_steak_v1.webp",
+    "sha256": "cb6eac87b280f7e108792d19471ccd5b4169cd0db775e3e3b7ccbbe32a9dcece"
+  },
+  {
+    "id": "monument",
+    "file": "assets/images/genre-heroes/monument.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "記念碑_モニュメントを眺める女性と東京タワー_monument_v1.webp",
+    "sha256": "29d347b485903546fa96e0226aa26607f2b5a31718260ff54b3547e5e1ba12ec"
+  },
+  {
+    "id": "kaiseki",
+    "file": "assets/images/genre-heroes/kaiseki.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "懐石_季節の料理を味わう女性と東京タワー_kaiseki_v1.webp",
+    "sha256": "ff5d06342d152f8b904b31c9c52632f670d8eabe37d31fefeba1e2fe8eba65b5"
+  },
+  {
+    "id": "yakiniku",
+    "file": "assets/images/genre-heroes/yakiniku.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "焼肉_yakiniku_v3.webp",
+    "sha256": "25973ac163a2e8e70e90cb977bca300c6d77350ef20e4a46c816ca7230d1f5ed"
+  },
+  {
+    "id": "italian",
+    "file": "assets/images/genre-heroes/italian.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "イタリアン_パスタを楽しむ女性と東京タワー_italian_v1.webp",
+    "sha256": "6aae634884005ee036fade4de83c70cf565baf6a49afe146643c6a49deef4965"
+  },
+  {
+    "id": "bakery",
+    "file": "assets/images/genre-heroes/bakery.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "パン屋_bakery_v3.webp",
+    "sha256": "ce8bab5a0d5e871900c1fcd62ad243a47d969128f16cf5ba29225676ec552566"
+  },
+  {
+    "id": "park-garden",
+    "file": "assets/images/genre-heroes/park-garden.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "公園・庭園_緑を楽しむ女性と東京タワー_park-garden_v1.webp",
+    "sha256": "2cdcaa122f3cb53ec9da962aeac9c2d46b8f3b04cadb12c7048b98316b8fe3dc"
+  },
+  {
+    "id": "tea-cafe",
+    "file": "assets/images/genre-heroes/tea-cafe.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "カフェ・お茶_日本茶を楽しむ女性と東京タワー_tea-cafe_v1.webp",
+    "sha256": "44b28aa8d1dbbdd1789b6e221ee178848ac5d85acb34cffd0b3c9dd0eb4a69cb"
+  },
+  {
+    "id": "burger",
+    "file": "assets/images/genre-heroes/burger.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "バーガー_食べる女性と対面のバーガー_東京タワー_burger_v4.webp",
+    "sha256": "9a71f844d0d2f4626bda3ac401a0daabb51a6c11c9dfd4e56dc2bef08f8df1e3"
+  },
+  {
+    "id": "japanese",
+    "file": "assets/images/genre-heroes/japanese.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "和食_和食膳を楽しむ女性と東京タワー_japanese_v1.webp",
+    "sha256": "499d4baf5590b601656e5cd9a7aadb0eea8fc1e135617a262244d5e76d233bcb"
+  },
+  {
+    "id": "onsen",
+    "file": "assets/images/genre-heroes/onsen.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "温泉_露天風呂でくつろぐ女性と東京タワー_onsen_v2.webp",
+    "sha256": "17e78251b6841982d4443665b14714218e08e3ce82ccf9f65fad5b509740ae6e"
+  },
+  {
+    "id": "sweets",
+    "file": "assets/images/genre-heroes/sweets.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "スイーツ_sweets_v3.webp",
+    "sha256": "2561e20be48c80826f7ca125ac36edb4b0452c171862c7d6d5f6071d3095ee22"
+  },
+  {
+    "id": "bistro-french",
+    "file": "assets/images/genre-heroes/bistro-french.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "ビストロ・フレンチ_料理を楽しむ女性と東京タワー_bistro-french_v1.webp",
+    "sha256": "37da530baed9e4a13dee7ecbbed7b6acc323fcd4bf861dd253f542dc8ee84c34"
+  },
+  {
+    "id": "jingisukan",
+    "file": "assets/images/genre-heroes/jingisukan.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "ジンギスカン_ラム肉を味わう女性と東京タワー_jingisukan_v1.webp",
+    "sha256": "8e544413113d0a6ac5d96342a3550a69d378158d3cd405a97de729bf94d4d8f0"
+  },
+  {
+    "id": "restaurant-bar",
+    "file": "assets/images/genre-heroes/restaurant-bar.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "レストラン＆バー_料理とカクテルを楽しむ女性と東京タワー_restaurant-bar_v1.webp",
+    "sha256": "37b5e8dcecc4de28dd748ca3407ad567122985b9a48d973d89ce7cd97becf1eb"
+  },
+  {
+    "id": "teishoku",
+    "file": "assets/images/genre-heroes/teishoku.webp",
+    "sourceFolder": "437537990018",
+    "sourceName": "食堂・定食_生姜焼き定食を楽しむ女性と東京タワー_teishoku_v1.webp",
+    "sha256": "751fe10872048074378923cd46443039be66c1782dd083b3dc0c491c0be1e296"
+  },
+  {
+    "id": "sushi",
+    "file": "assets/images/genre-heroes/sushi.webp",
+    "sourceFolder": "437459113243",
+    "sourceName": "citypop-sushi-v2.webp",
+    "sha256": "5482de6b6abfbb87acceda753c8bb6c5b3cc18600fac4a068f1c035f789b6a78"
+  },
+  {
+    "id": "ramen",
+    "file": "assets/images/genre-heroes/ramen.webp",
+    "sourceFolder": "437459113243",
+    "sourceName": "citypop-noodles-v2.webp",
+    "sha256": "d41424c4ffc7608283d68c8664b5e2b6a788a080d38a25afccb34c0257e303de"
+  },
+  {
+    "id": "chinese",
+    "file": "assets/images/genre-heroes/chinese.webp",
+    "sourceFolder": "437459113243",
+    "sourceName": "citypop-machi-chuka-v2.webp",
+    "sha256": "04112419d42a8f988594d47d376ab6226086d2cd502dcc9ba0c5e02a003d0b21"
+  },
+  {
+    "id": "izakaya",
+    "file": "assets/images/genre-heroes/izakaya.webp",
+    "sourceFolder": "437459113243",
+    "sourceName": "citypop-showa-izakaya-v3.webp",
+    "sha256": "bd22abcea4f88709e5366138873dfe5c43447f9438105d3f052e6bf7d688d4c0"
+  },
+  {
+    "id": "hotel",
+    "file": "assets/images/genre-heroes/hotel.webp",
+    "sourceFolder": "437459113243",
+    "sourceName": "citypop-stay-v2.webp",
+    "sha256": "c0f1189d70c638359582c61d853f6cdc669354dff387643747a63f3059d282f4"
+  },
+  {
+    "id": "museum",
+    "file": "assets/images/genre-heroes/museum.webp",
+    "sourceFolder": "437459113243",
+    "sourceName": "citypop-art-heritage-v2.webp",
+    "sha256": "4ec7c409aa068e5ef8ecbd9d64159310a254271adf9a3c002da670cc5d3eeb58"
+  },
+  {
+    "id": "temple",
+    "file": "assets/images/genre-heroes/temple.webp",
+    "sourceFolder": "437459113243",
+    "sourceName": "citypop-autumn-zen-temple-v2.webp",
+    "sha256": "c7f58989de8ebb609b79c35a49484f7f8cbb048e4418d6021b5e022fc966f722"
+  },
+  {
+    "id": "bar",
+    "file": "assets/images/genre-heroes/bar.webp",
+    "sourceFolder": "437459113243",
+    "sourceName": "rooftop-lounge.webp",
+    "sha256": "6769ce8019eeef53051317a142a46fe0ee84667032067bc769b044f8179c3cb2"
+  }
+]

@@ -1,0 +1,9 @@
+import fs from 'node:fs';import vm from 'node:vm';import crypto from 'node:crypto';
+const html=fs.readFileSync('../source-readonly/tokyo-guide_2.html','utf8');
+function extract(name){let pos=html.indexOf('=',html.indexOf('const '+name))+1;while(/\s/.test(html[pos]))pos++;const open=html[pos],close=open==='{'?'}':']';let depth=0,quote=null,esc=false;for(let i=pos;i<html.length;i++){let c=html[i];if(quote){if(esc){esc=false;continue}if(c==='\\'){esc=true;continue}if(c===quote)quote=null;continue}if(c==='"'||c==="'"){quote=c;continue}if(c===open)depth++;else if(c===close&&--depth===0)return vm.runInNewContext('('+html.slice(pos,i+1)+')')}throw Error(name)}
+const data=extract('DATA'),routes=extract('EJ_ROUTES'),notes=extract('EJ_NOTES'),art=extract('EJ_GENRE_ART');
+const essentials=JSON.parse(fs.readFileSync('data/visitor-essentials.json')),ig=JSON.parse(fs.readFileSync('data/instagram-links.json'));
+const places=Object.entries(data).flatMap(([city,{places}])=>places.map(p=>{const id=city+'|'+(p.url.match(/!1s(0x[0-9a-f]+:0x[0-9a-f]+)/)?.[1]||'name:'+p.name);return {...p,city,id,details:essentials.records.find(r=>r.key===id)||null,instagram:ig[id]||null,note:notes[p.name]||null}}));
+const genres=[...new Set(places.map(p=>p.cat))].sort().map(name=>({id:name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/-$/,''),name,hero:art.find(([cat])=>cat===name)?.[1]||null}));
+for(const [name,value]of Object.entries({original:data,places,genres,routes}))fs.writeFileSync('data/'+name+'.json',JSON.stringify(value));
+fs.writeFileSync('data/migration.json',JSON.stringify({source:'hashiramotobunko/tokyo-guide',sha256:crypto.createHash('sha256').update(html).digest('hex'),places:places.length,regions:Object.keys(data).length,genres:genres.length,routes:routes.length},null,2));console.log({places:places.length,genres:genres.length,routes:routes.length});
