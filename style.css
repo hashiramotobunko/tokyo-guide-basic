@@ -314,3 +314,10 @@ nav .ui-ja { text-decoration: none; }
 .home-page .genre-caption-name .ui-ja { font-size: 8px; }
 .genre-index-link { padding: 7px 9px; border-radius: 2px; }
 .genre-index-link .genre-caption { margin: 0; padding: 0; border: 0; }
+
+@media (min-width: 960px) {
+  .genre-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 20px 14px;
+  }
+}
