@@ -51,3 +51,34 @@
   .genre-hero h1::after { margin-top: 14px; }
   .genre-hero p { margin: 8px 0; }
 }
+
+.genre-collection {
+  margin-top: 36px;
+  padding-top: 4px;
+  border-top: 1px solid var(--line);
+}
+.collection-art {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--line);
+  transition: transform .2s;
+}
+.collection-art img {
+  position: absolute;
+  display: block;
+  width: var(--sheet-width);
+  max-width: none;
+  height: auto;
+  left: var(--sheet-left);
+  top: var(--sheet-top);
+}
+.genre-collection h3 {
+  font: 500 21px Georgia, serif;
+  margin: 10px 0 3px;
+}
+.genre-card:hover .collection-art { transform: translateY(-3px); }
+@media (max-width: 560px) {
+  .genre-collection h3 { font-size: 17px; }
+}

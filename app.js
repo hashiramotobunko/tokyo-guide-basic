@@ -1,3 +1,4 @@
+import {collectionArt} from './genre-art.mjs';
 import {GROUPS,readState,stateURL,matchPlaces,genreCats,mapURL} from './core.mjs';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safe=u=>/^https?:\/\//i.test(u||'')?esc(u):'#';
@@ -10,8 +11,31 @@ function toast(msg){$('#toast').textContent=msg;$('#toast').classList.add('visib
 function go(patch,reset=false){state=reset?readState(''):{...state};Object.assign(state,patch);state.place=patch.place||'';limit=36;history.pushState(null,'',stateURL(state));render();}
 function search(){return `<form class="search-form" id="search"><label>店名・キーワード<input name="q" type="search" value="${esc(state.q)}" placeholder="店名、ジャンル、エリアから探す"></label><label>地域<select name="region">${option('','全国・すべての地域',state.region)}${unique(places.map(p=>p.city)).map(x=>option(x,x,state.region)).join('')}</select></label><button type="submit">検索</button></form>`}
 function cards(){return GROUPS.map(g=>{const n=matchPlaces(places,{genre:g.id,region:state.region},genres).length;return `<a class="genre-card" href="${stateURL({genre:g.id,region:state.region})}"><div class="genre-art"><svg viewBox="${g.crop.join(' ')}" role="img" aria-label="${esc(g.ja)}のイラスト"><image href="assets/images/genre-cards/reference.png" width="1536" height="1024"/></svg></div><h2>${g.name}</h2><p>${g.ja} · ${n} places</p></a>`}).join('')}
+function illustratedGenres(){
+  const counts = new Map();
+  for (const place of places) {
+    if (state.region && place.city !== state.region) continue;
+    counts.set(place.cat, (counts.get(place.cat) || 0) + 1);
+  }
+  return genres.filter(genre => collectionArt.has(genre.id)).map(genre => {
+    const { sheet, x, y, width, height } = collectionArt.get(genre.id);
+    const href = stateURL({ genre: 'category:' + genre.id, region: state.region });
+    const frame = [
+      'aspect-ratio:' + width + '/' + height,
+      '--sheet-width:' + (1086 / width * 100) + '%',
+      '--sheet-left:' + (-x / width * 100) + '%',
+      '--sheet-top:' + (-y / height * 100) + '%',
+    ].join(';');
+    return `<a class="genre-card" href="${href}">
+      <div class="collection-art" style="${frame}">
+        <img src="assets/images/genre-cards/collection-${sheet}.webp" alt="" loading="lazy" decoding="async">
+      </div>
+      <h3>${esc(genre.name)}</h3><p>${counts.get(genre.name) || 0} places</p>
+    </a>`;
+  }).join('');
+}
 function genreLinks(){return genres.map(g=>{const n=places.filter(p=>p.cat===g.name&&(!state.region||p.city===state.region)).length;return `<a class="chip" href="${stateURL({genre:'category:'+g.id,region:state.region})}">${esc(g.name)} <small>${n}</small></a>`}).join('')}
-function home(){return search()+`<div class="section-top"><h1>EXPLORE BY GENRE</h1><p>気になる一枚から、街へ。 · ${state.region||'21 regions'} / ${places.filter(p=>!state.region||p.city===state.region).length} places</p></div><div class="genre-grid">${cards()}</div><details class="all-genres"><summary>すべてのジャンルから探す — ${genres.length} genres</summary><div class="genre-links">${genreLinks()}</div></details><div class="explore-all"><a class="text-link" href="${stateURL({page:'explore',region:state.region})}">すべてのお店・スポットを見る →</a></div>`}
+function home(){return search()+`<div class="section-top"><h1>EXPLORE BY GENRE</h1><p>気になる一枚から、街へ。 · ${state.region||'21 regions'} / ${places.filter(p=>!state.region||p.city===state.region).length} places</p></div><div class="genre-grid">${cards()}</div><section class="genre-collection"><div class="section-top"><h2>MORE GENRES</h2><p>${collectionArt.size} illustrated genres</p></div><div class="genre-grid">${illustratedGenres()}</div></section><details class="all-genres"><summary>すべてのジャンルから探す — ${genres.length} genres</summary><div class="genre-links">${genreLinks()}</div></details><div class="explore-all"><a class="text-link" href="${stateURL({page:'explore',region:state.region})}">すべてのお店・スポットを見る →</a></div>`}
 const fieldNames={hours:'営業時間',closed:'定休日',reservation:'予約',address:'住所',payment:'支払い',tip:'メモ',price:'料金',access:'アクセス',english:'言語対応'};
 function facts(p){const fields=(p.details?.fields||[]).filter(f=>f.v&&['official','secondary','conflict'].includes(f.stat));if(!fields.length)return '';return `<details class="facts"><summary>調査済み情報・出典を見る</summary><dl>${fields.map(f=>`<dt>${esc(fieldNames[f.t]||f.t)}</dt><dd>${esc(f.v)}${f.stat==='conflict'?'<strong>（情報に相違あり・要確認）</strong>':''}${f.alt?`<p>${esc(typeof f.alt==='string'?f.alt:JSON.stringify(f.alt))}</p>`:''}<small>${f.stat==='official'?'公式情報':'参考情報'} · 確認日 ${esc(f.chk||'記録なし')} ${f.src?link(f.src,'出典'):''}</small></dd>`).join('')}</dl><p>営業時間・営業状況は訪問前に公式情報をご確認ください。</p></details>`}
 function placeCard(p){const isSaved=saved.has(p.id);const tip=p.note?.en||p.desc||(p.details?.fields||[]).find(f=>f.t==='tip'&&f.v&&['official','secondary'].includes(f.stat))?.v;return `<article class="place ${state.place===p.id?'selected':''}" data-place="${esc(p.id)}"><button class="save" data-save="${esc(p.id)}" aria-pressed="${isSaved}" aria-label="${esc(p.name)}を${isSaved?'保存から削除':'保存'}">${isSaved?'★':'☆'}</button><p class="category">${esc(p.cat)}</p><h3>${esc(p.name)}</h3><p class="location">${esc(p.city)} / ${esc(p.area)}</p>${tip?`<p class="note">${esc(tip)}${p.note?.source?' '+link(p.note.source,'紹介文の出典'):''}</p>`:''}<div class="links">${link(p.url,'Google Maps')}${p.details?.website?link(p.details.website,'公式サイト'):''}${p.instagram?.u?link('https://www.instagram.com/'+p.instagram.u+'/',p.instagram.t==='brand'?'Instagram（ブランド）':'Instagram'):''}<button data-map="${esc(p.id)}">地図で見る</button></div>${facts(p)}</article>`}
