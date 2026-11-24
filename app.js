@@ -1,4 +1,4 @@
-import { recordPlaceSave, saveCountsEnabled } from './save-count.mjs?v=enabled';
+import { recordPlaceSave, saveCountsEnabled } from './save-count.mjs';
 import { readPersonalRoutes, writePersonalRoutes } from './route-library.mjs';
 import {collectionArt} from './genre-art.mjs';
 import {GROUPS,readState,stateURL,matchPlaces,genreCats,mapURL} from './core.mjs';
@@ -98,13 +98,11 @@ function illustratedGenres(){
     const frame = [
       'aspect-ratio:' + width + '/' + height,
       '--sheet-width:' + (1086 / width * 100) + '%',
-      '--sheet-left:' + (-x / width * 100) + '%',
-      '--sheet-top:' + (-y / height * 100) + '%',
+      'background-position:' + (x / (1086 - width) * 100) + '% ' + (y / (1448 - height) * 100) + '%',
+      'background-image:url(assets/images/genre-cards/collection-' + sheet + '.webp)',
     ].join(';');
     return `<a class="genre-card" href="${href}">
-      <div class="collection-art" style="${frame}">
-        <img src="assets/images/genre-cards/collection-${sheet}.webp" alt="" loading="lazy" decoding="async">
-      </div>
+      <div class="collection-art" style="${frame}" aria-hidden="true"></div>
       ${genreCaption(genre.name, genreJapanese[genre.id], counts.get(genre.name) || 0)}
     </a>`;
   }).join('');

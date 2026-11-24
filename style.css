@@ -65,14 +65,9 @@
   box-shadow: 0 0 0 1px var(--line);
   transition: transform .2s;
 }
-.collection-art img {
-  position: absolute;
-  display: block;
-  width: var(--sheet-width);
-  max-width: none;
-  height: auto;
-  left: var(--sheet-left);
-  top: var(--sheet-top);
+.collection-art {
+  background-repeat: no-repeat;
+  background-size: var(--sheet-width) auto;
 }
 .genre-collection h3 {
   font: 500 21px Georgia, serif;
