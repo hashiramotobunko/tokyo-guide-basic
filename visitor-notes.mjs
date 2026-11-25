@@ -80,8 +80,8 @@ export const visitorNotes = {
     "ja": "国会議事堂を正面に望む並木。秋は扇形のイチョウの葉が黄色く染まる。"
   },
   "Tokyo|0x60188b000e66b1c1:0x95d4fdaf23eeb45d": {
-    "en": "A former private mansion’s entrance now serves as a high school gate. View it from the street for a glimpse of the estates that once stood in Nagatacho.",
-    "ja": "旧村井吉兵衛邸の表門を日比谷高校が受け継ぐ。通りから旧邸宅の面影を眺めたい。"
+    "en": "This former mansion gate now leads to Hibiya High School, one of Tokyo’s leading public high schools. The metropolitan government designates it as one of seven schools that prepare students for highly selective universities. View it from the street for a glimpse of the estates that once stood in Nagatacho.",
+    "ja": "旧村井吉兵衛邸の表門を都立日比谷高校が受け継ぐ。都内屈指の公立進学校で、東京都が難関大学への進学を支援する「進学指導重点校」7校の一つ。通りから旧邸宅の面影を眺めたい。"
   },
   "Tokyo|0x60188c9a0eb42e39:0x5a174085841c5258": {
     "en": "At a Tokyo Yakult Swallows home game, little umbrellas bob in the stands. The name Jingu points to the ballpark’s other identity: Meiji Jingu shrine runs this ground in its outer gardens, and income from the gardens’ facilities helps maintain the shrine.",

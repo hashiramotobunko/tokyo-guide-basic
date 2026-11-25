@@ -1,5 +1,5 @@
-import { savedMapSection, attachSavedMap } from './saved-map.mjs?v=guide-map-pins';
-import { visitorNotes } from './visitor-notes.mjs?v=temples';
+import { savedMapSection, attachSavedMap } from './saved-map.mjs?v=region-camera';
+import { visitorNotes } from './visitor-notes.mjs?v=hibiya';
 import { recordPlaceSave, saveCountsEnabled } from './save-count.mjs';
 import { readPersonalRoutes, writePersonalRoutes } from './route-library.mjs';
 import {collectionArt} from './genre-art.mjs';
