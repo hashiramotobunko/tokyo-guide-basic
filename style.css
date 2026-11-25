@@ -345,7 +345,7 @@ footer {padding-bottom: 75px;}
 .saved-map-tool {margin:24px 0; padding:18px; border:1px solid var(--line);}
 .saved-map-tool label {display:inline-grid;gap:4px;max-width:100%;}
 .saved-map-tool select,.saved-map-tool button {min-height:44px;max-width:100%;padding:7px;}
-.saved-map-tool .picker-map {height:clamp(240px,40vh,430px);margin:12px 0;z-index:0;background:#ecebe4;}
+.saved-map-tool .picker-map {height:clamp(480px,80vh,860px);margin:12px 0;z-index:0;background:#ecebe4;}
 .picker-detail {display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:10px;}
 .picker-detail a {text-decoration:underline;}
 
