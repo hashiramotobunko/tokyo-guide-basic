@@ -365,9 +365,84 @@ footer {padding-bottom: 75px;}
 .map-filters {display:grid;grid-template-columns:1fr 1fr 1fr 2fr;gap:12px}
 .map-filters select {width:100%;min-width:0}
 .picker-count {display:block;margin:10px 0}
-.home-page .brand {font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.065em;border-top:4px solid currentColor}
-.home-page .brand b {color:inherit;font-family:Arial,Helvetica,sans-serif;letter-spacing:-.075em}
-.home-page .section-top {border-top:1px solid currentColor;padding-top:12px}
-.home-page .section-top h1,.home-page .section-top h2 {font-family:Georgia,serif;letter-spacing:-.045em}
-@media(min-width:900px){.home-page main > .section-top {display:grid;grid-template-columns:minmax(0,2fr) 1fr;align-items:end}.home-page .genre-index-note {justify-self:end;border-left:3px solid var(--accent);padding-left:16px}}
 @media(max-width:760px){.map-filters {grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.home-page {
+  --paper: #f9f7f2;
+  --ink: #24221f;
+  --accent: #a23e2a;
+}
+
+.home-page .site-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 30px 0;
+}
+
+.home-page .brand {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Baskerville, 'Palatino Linotype', Georgia, serif;
+  font-size: clamp(26px, 4.1vw, 56px);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -.055em;
+}
+
+.home-page .brand b { color: inherit; }
+.home-page .brand span { margin-top: 9px; color: #635c54; }
+.home-page nav { padding: 0; gap: clamp(12px, 2.2vw, 28px); }
+.home-page nav a[aria-current=page] { text-decoration: none; }
+.home-page main { padding-top: 28px; }
+
+.home-page .home-search {
+  padding: 16px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #eee9df;
+}
+
+.home-page .home-search :is(input, select, button) { border-radius: 4px; }
+.home-page .home-search :is(input, select) {
+  border-color: #c9c0b3;
+  background: #fffdfa;
+  padding-inline: 9px;
+}
+
+.home-page .section-top { margin: 30px 0 14px; }
+.home-page .section-top :is(h1, h2) {
+  font: 600 clamp(23px, 2.75vw, 34px)/1.05 Baskerville, 'Palatino Linotype', Georgia, serif;
+  letter-spacing: -.035em;
+}
+
+.home-page .section-top p { color: #5f574d; }
+.home-page .genre-caption { border: 0; margin-top: 7px; padding: 0; }
+.home-page .genre-art, .home-page .collection-art {
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+.home-page .genre-collection, .home-page .all-genres { border: 0; padding-top: 0; }
+.home-page .genre-collection { margin-top: 34px; }
+
+@media (min-width: 561px) and (max-width: 850px) {
+  .home-page .home-search { grid-template-columns: repeat(4, minmax(0, 1fr)) auto; }
+  .home-page .home-search button { grid-column: auto; }
+}
+
+@media (max-width: 700px) {
+  .home-page .site-header { display: grid; gap: 13px; align-items: start; padding-top: 18px; }
+  .home-page .brand, .home-page nav { grid-area: auto; justify-self: start; }
+  .home-page main { padding-top: 16px; }
+  .home-page .section-top { margin-top: 24px; }
+  .home-page .genre-index-note { justify-content: start; margin-top: 8px; }
+}
+
+@media (max-width: 560px) {
+  .home-page .home-search { padding: 11px; gap: 8px; }
+  .home-page .home-search button { grid-column: 2; }
+}
