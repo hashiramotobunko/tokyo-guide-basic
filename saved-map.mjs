@@ -1,6 +1,6 @@
 import { mapURL } from './core.mjs?v=regional-order';
 
-let region = '', selectedId = '';
+let region = '', selectedId = new URLSearchParams(location.search).get('place') || '';
 export const savedMapSection = () => `<section class="saved-map-tool"><h2>Find places on Google Maps</h2>
 <p>Choose a region and a place. Open its Google Maps listing, tap Save, and choose a list in your Google account. Use the star here to add it to My Routes on this device.</p>
 <label>Region <select class="picker-region"></select></label>
@@ -46,7 +46,11 @@ export function attachSavedMap(places, saved, displayName) {
     button.dataset.save = p.id;
     button.setAttribute('aria-pressed', String(saved.has(p.id)));
     button.textContent = saved.has(p.id) ? '★ Saved to My Routes' : '☆ Save for My Routes';
-    detail.append(title,link,button);
+    const route = document.createElement('button');
+    route.type='button';
+    route.dataset.pickStop=p.id;
+    route.textContent='+ Add to route';
+    detail.append(title,link,button,route);
     status.textContent = p.url.includes('!1s') ? '' : 'Google Maps search result. Check the place name and address before saving.';
   }
   function fillPlaces() {

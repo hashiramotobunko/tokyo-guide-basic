@@ -1,4 +1,4 @@
-import { savedMapSection, attachSavedMap } from './saved-map.mjs?v=google-picker';
+import { savedMapSection, attachSavedMap } from './saved-map.mjs?v=map-tab';
 import { visitorNotes } from './visitor-notes.mjs?v=temples';
 import { recordPlaceSave, saveCountsEnabled } from './save-count.mjs';
 import { readPersonalRoutes, writePersonalRoutes } from './route-library.mjs';
@@ -184,7 +184,7 @@ function placeCard(p){const isSaved=saved.has(p.id);const tip=p.note?.en||p.desc
 function hero(){const exact=genres.find(g=>g.id===state.genre.replace(/^category:/,'')&&(!state.cat||g.name===state.cat));const group=!state.cat&&GROUPS.find(g=>g.id===state.genre);const title=group?.name||exact?.name||'Explore';const image=group?.hero||exact?.hero;const ja=group?.ja||genreJapanese[exact?.id];return image?`<section class="genre-hero"><img src="assets/images/genre-heroes/${image}.webp" alt="Original illustration for ${esc(title)}" width="960" height="1200"><div><span class="eyebrow">EXPLORE / ${esc(title.toUpperCase())}</span><h1>${ui(title,ja)}</h1><small>${group?.id==='cafes'?'Artwork: Café / Tea':'Original artwork'}</small><p><a class="text-link" href="#results">${ui('View places ↓','お店・スポットを見る')}</a></p></div></section>`:`<h1 class="page-heading">${esc(state.page==='saved'?'Saved':title)}</h1>`}
 function filters(sortOnly=false){const base=matchPlaces(places,{genre:state.genre,region:state.region,page:state.page,cat:state.cat},genres,saved);const cats=genreCats(state,genres);return `<div class="filters">${sortOnly?'':`<label>${ui('Area', 'エリア')}<select data-filter="area">${option('','All areas',state.area)}${unique([...base.map(p=>p.area),...(state.area?[state.area]:[])]).map(x=>option(x,x,state.area)).join('')}</select></label><label>${ui('Genre', 'ジャンル')}<select data-filter="cat">${option('','All genres',state.cat)}${genres.filter(g=>!cats||cats.includes(g.name)).map(g=>option(g.name,g.name,state.cat)).join('')}</select></label>`}<label>${ui('Sort by', '並び替え')}<select data-filter="sort">${option('','North to south · 北から南',state.sort==='area'?'':state.sort)}${option('south-to-north','South to north · 南から北',state.sort)}${option('name','Name (A–Z)',state.sort)}${option('name-desc','Name (Z–A)',state.sort)}</select></label></div>`}
 function conditions(){return `<div class="conditions" aria-label="Active filters">${['region','area','cat','q'].filter(k=>state[k]).map(k=>`<button data-clear="${k}" aria-label="Clear ${esc(state[k])} filter">${esc(state[k])} ×</button>`).join('')}${['region','area','cat','q'].some(k=>state[k])?`<button data-clear="filters">${ui('Clear filters','絞り込みを解除')}</button>`:''}</div>`}
-let savedTab = 'find';
+let savedTab = new URLSearchParams(location.search).get('tab')==='map' ? 'map' : 'find';
 let savedMapOpen = false;
 function savedRows() {
   const rows = matchPlaces(places, {...state, page: savedTab === 'stars' ? 'saved' : 'explore'}, genres, saved);
@@ -198,10 +198,10 @@ function savedRows() {
     (!rows.length ? `<p>${savedTab==='stars'&&!saved.size?'Choose Find places and tap Save beside a shop.':'Try another keyword or clear the filters.'}</p>` : '');
 }
 function savedPage() {
-  const tabs = [['find','Find places'],['stars','My saved places · '+saved.size],['routes','My Routes']];
+  const tabs = [['find','Find places'],['map','Google Maps'],['stars','My saved places · '+saved.size],['routes','My Routes']];
   return `<h1 class="page-heading">Saved</h1><div class="saved-tabs">${tabs.map(([id,label])=>`<button data-saved-tab="${id}" aria-pressed="${savedTab===id}">${label}</button>`).join('')}</div>` +
-    (savedTab==='routes' ? personalRouteSection() : `<div id="saved-search">${homeSearch()}</div>
-      ${conditions()}<details class="saved-map-details" ${savedMapOpen?'open':''}><summary>Find on Google Maps</summary>${savedMapSection()}</details>
+    (savedTab==='map' ? savedMapSection() : savedTab==='routes' ? personalRouteSection() : `<div id="saved-search">${homeSearch()}</div>
+      ${conditions()}
       <section id="results">${savedRows()}</section>`) +
     '<details><summary>How to use Saved</summary>'+savedInstructions()+'</details>';
 }
