@@ -1,4 +1,4 @@
-import { savedMapSection, attachSavedMap } from './saved-map.mjs';
+import { savedMapSection, attachSavedMap } from './saved-map.mjs?v=google-picker';
 import { visitorNotes } from './visitor-notes.mjs?v=temples';
 import { recordPlaceSave, saveCountsEnabled } from './save-count.mjs';
 import { readPersonalRoutes, writePersonalRoutes } from './route-library.mjs';
@@ -51,9 +51,6 @@ function areaOptions(region, area = '') {
 function homeSearch() {
   const regions = unique(places.map(place => place.city));
   return `<form class="home-search" id="search" data-home-search>
-    <label class="home-query">${ui('Keyword', '店名・キーワード')}
-      <input name="q" type="search" placeholder="Places, neighborhoods, things to do">
-    </label>
     <label>${ui('Region', '地域')}
       <select name="region">${option('', 'All regions', state.region)}${regions.map(name => option(name, name, state.region)).join('')}</select>
     </label>
@@ -62,6 +59,9 @@ function homeSearch() {
     </label>
     <label>${ui('Genre', 'ジャンル')}
       <select name="cat">${option('', 'All genres', '')}${genres.map(genre => option(genre.name, genre.name, '')).join('')}</select>
+    </label>
+    <label class="home-query">${ui('Keyword', '店名・キーワード')}
+      <input name="q" type="search" placeholder="Place name or keyword">
     </label>
     <button type="submit">${ui('Search', '検索')}</button>
   </form>`;

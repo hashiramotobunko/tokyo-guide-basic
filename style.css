@@ -122,7 +122,7 @@
 .home-page main { max-width: 1200px; padding-top: 20px; }
 .home-search {
   display: grid;
-  grid-template-columns: 1.7fr 1fr 1fr 1.25fr auto;
+  grid-template-columns: 1fr 1fr 1.25fr 1.7fr auto;
   gap: 10px;
   padding: 16px 0;
   border-bottom: 1px solid #b8b4a7;
@@ -166,7 +166,7 @@
 
 @media (max-width: 850px) {
   .home-search { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .home-query { grid-column: 1 / -1; }
+  .home-search button { grid-column: 1 / -1; }
 }
 @media (max-width: 560px) {
   .home-page .site-header {
@@ -348,3 +348,5 @@ footer {padding-bottom: 75px;}
 .saved-map-tool .picker-map {height:clamp(240px,40vh,430px);margin:12px 0;z-index:0;background:#ecebe4;}
 .picker-detail {display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:10px;}
 .picker-detail a {text-decoration:underline;}
+
+.picker-map iframe { display:block; width:100%; height:100%; border:0; }
