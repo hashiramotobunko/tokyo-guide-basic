@@ -1,4 +1,4 @@
-import { savedMapSection, attachSavedMap } from './saved-map.mjs?v=region-camera';
+import { savedMapSection, attachSavedMap } from './saved-map.mjs?v=area-genre';
 import { visitorNotes } from './visitor-notes.mjs?v=hibiya';
 import { recordPlaceSave, saveCountsEnabled } from './save-count.mjs';
 import { readPersonalRoutes, writePersonalRoutes } from './route-library.mjs';

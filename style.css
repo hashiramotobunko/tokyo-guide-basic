@@ -361,3 +361,13 @@ footer {padding-bottom: 75px;}
 .pick-row a {text-decoration:underline}
 .saved-map-details {margin:12px 0}
 @media(max-width:600px){.pick-row div{flex-basis:100%}.saved-tabs{gap:4px}.saved-tabs button{padding:6px 8px}}
+
+.map-filters {display:grid;grid-template-columns:1fr 1fr 1fr 2fr;gap:12px}
+.map-filters select {width:100%;min-width:0}
+.picker-count {display:block;margin:10px 0}
+.home-page .brand {font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.065em;border-top:4px solid currentColor}
+.home-page .brand b {color:inherit;font-family:Arial,Helvetica,sans-serif;letter-spacing:-.075em}
+.home-page .section-top {border-top:1px solid currentColor;padding-top:12px}
+.home-page .section-top h1,.home-page .section-top h2 {font-family:Georgia,serif;letter-spacing:-.045em}
+@media(min-width:900px){.home-page main > .section-top {display:grid;grid-template-columns:minmax(0,2fr) 1fr;align-items:end}.home-page .genre-index-note {justify-self:end;border-left:3px solid var(--accent);padding-left:16px}}
+@media(max-width:760px){.map-filters {grid-template-columns:repeat(2,minmax(0,1fr))}}

@@ -2,11 +2,13 @@ import { mapURL } from './core.mjs?v=regional-order';
 
 const regionViews = {"Tokyo":[35.685,139.735,12],"Aichi":[35.1,137,9],"Okinawa":[26.45,127.85,9],"Chiba":[35.6,140.1,9],"Fukuoka":[33.58,130.42,10],"Hokkaido":[43.3,142.4,7],"Hyogo":[34.73,135.23,10],"Ibaraki":[36.1,140.15,8],"Iwate":[39.3,141.5,8],"Kanagawa":[35.43,139.5,10],"Kumamoto":[32.8,130.71,10],"Kyoto":[35.01,135.76,11],"Mie":[34.49,136.71,9],"Miyazaki":[31.91,131.42,10],"Nagano":[36.43,137.99,8],"Nagasaki":[33.02,129.78,9],"Osaka":[34.68,135.5,11],"Tochigi":[36.65,139.82,8],"Toyama":[36.69,137.21,10],"Yamanashi":[35.61,138.65,9],"Yokohama":[35.45,139.63,12]};
 
-let region = '', selectedId = new URLSearchParams(location.search).get('place') || '';
+let region = '', area = '', genre = '', selectedId = new URLSearchParams(location.search).get('place') || '';
 export const savedMapSection = () => `<section class="saved-map-tool"><h2>Find places on Google Maps</h2>
 <p>Tap a guide pin to see the place name. Follow “Save or add to route” to open that place in Saved. You can also choose a place below.</p>
-<label>Region <select class="picker-region"></select></label>
-<label>Place <select class="picker-place"></select></label>
+<div class="map-filters"><label>Region <select class="picker-region"></select></label>
+<label>Area <select class="picker-area"></select></label>
+<label>Genre <select class="picker-genre"></select></label>
+<label>Place <select class="picker-place"></select></label></div><output class="picker-count"></output>
 <button type="button" class="picker-gps">Show my location</button>
 <div class="picker-map"></div><p role="status" class="picker-status"></p>
 <div class="picker-detail"></div></section>`;
@@ -58,17 +60,30 @@ export function attachSavedMap(places, saved, displayName) {
     status.textContent = p.url.includes('!1s') ? '' : 'Google Maps search result. Check the place name and address before saving.';
   }
   function fillPlaces() {
-    const rows = places.filter(p => !region || p.city === region)
+    const regional = places.filter(p => !region || p.city === region);
+    function options(key, values, selected) {
+      const control = get(key);
+      control.replaceChildren(new Option('All ' + key + 's',''));
+      for (const value of [...new Set(values)].filter(Boolean).sort()) control.add(new Option(value,value));
+      control.value = selected;
+    }
+    options('area', regional.map(p => p.area), area);
+    const local = regional.filter(p => !area || p.area === area);
+    options('genre', local.map(p => p.cat), genre);
+    const rows = local.filter(p => !genre || p.cat === genre)
       .sort((a,b)=>displayName(a).localeCompare(displayName(b)));
     list.replaceChildren(new Option('Select a place',''));
     for (const p of rows) list.add(new Option(displayName(p)+' · '+p.area,p.id));
-    list.value = rows.some(p=>p.id===selectedId) ? selectedId : '';
+    list.value = rows.some(p=>p.id===selectedId) ? selectedId : (area || genre) && rows.length ? rows[0].id : '';
+    get('count').textContent = rows.length + (rows.length === 1 ? ' matching place' : ' matching places') + ((area || genre) && rows.length > 1 ? ' · Choose a place to change the map.' : '');
     showPlace();
   }
   regions.add(new Option('All regions',''));
   for (const r of [...new Set(places.map(p=>p.city))].sort()) regions.add(new Option(r,r));
   regions.value = region;
-  regions.onchange = () => { region = regions.value; selectedId = ''; fillPlaces(); };
+  regions.onchange = () => { region = regions.value; area = genre = ''; selectedId = ''; fillPlaces(); };
+  get('area').onchange = () => { area = get('area').value; genre = selectedId = ''; fillPlaces(); };
+  get('genre').onchange = () => { genre = get('genre').value; selectedId = ''; fillPlaces(); };
   list.onchange = showPlace;
   get('gps').onclick = () => {
     const attempt = ++request;
