@@ -2,7 +2,7 @@ import { mapURL } from './core.mjs?v=regional-order';
 
 let region = '', selectedId = new URLSearchParams(location.search).get('place') || '';
 export const savedMapSection = () => `<section class="saved-map-tool"><h2>Find places on Google Maps</h2>
-<p>Choose a region and a place. Open its Google Maps listing, tap Save, and choose a list in your Google account. Use the star here to add it to My Routes on this device.</p>
+<p>Tap a guide pin to see the place name. Follow “Save or add to route” to open that place in Saved. You can also choose a place below.</p>
 <label>Region <select class="picker-region"></select></label>
 <label>Place <select class="picker-place"></select></label>
 <button type="button" class="picker-gps">Show my location</button>
@@ -29,8 +29,8 @@ export function attachSavedMap(places, saved, displayName) {
     selectedId = list.value;
     const p = places.find(place => place.id === selectedId);
     if (!p) {
-      showMap('https://maps.google.com/maps?output=embed&q=' + encodeURIComponent(region ? region + ', Japan' : 'Japan'), 'Google Maps: ' + (region || 'Japan'));
-      status.textContent = 'Select a place to see its Google Maps listing.';
+      showMap('https://www.google.com/maps/d/embed?mid=1OiqXdSmKEXvIjmeYprKMvLYoLpPwodA', 'SHAKEDOWN STREET guide places');
+      status.textContent = 'Tap a pin to explore the guide.';
       return;
     }
     showMap(mapURL(p), 'Google Maps: ' + displayName(p));
@@ -74,7 +74,7 @@ export function attachSavedMap(places, saved, displayName) {
       if (!panel.isConnected || attempt !== request) return;
       selectedId = list.value = ''; detail.replaceChildren();
       const point = pos.coords.latitude + ',' + pos.coords.longitude;
-      showMap('https://maps.google.com/maps?output=embed&z=15&q='+encodeURIComponent(point),'Google Maps around your location');
+      showMap('https://www.google.com/maps/d/embed?mid=1OiqXdSmKEXvIjmeYprKMvLYoLpPwodA&z=15&ll='+encodeURIComponent(point),'Google Maps around your location');
       status.textContent = 'Explore Google Maps around you, or select a guide place above.';
     },()=>{if(panel.isConnected && request===attempt)status.textContent='Location unavailable. Choose a region and a place.';},{timeout:12000,maximumAge:60000});
   };
