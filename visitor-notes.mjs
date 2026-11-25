@@ -250,5 +250,133 @@ export const visitorNotes = {
   "Hokkaido|0x5f0b298530a7cfd5:0x2ad2065307072ffd": {
     "en": "Sapporo’s covered shopping arcade gives you a street-level walk even in snow or rain. Follow the numbered blocks to browse local shops and find somewhere to eat.",
     "ja": "札幌中心部を東西につなぐアーケード商店街。雪や雨の日も丁目をたどりながら買い物と食事を楽しめる。"
+  },
+  "Tokyo|0x60188bf16c840001:0xd836abfffa0bad15": {
+    "en": "Look past the clipped pines to the moat. This open ground was part of Edo Castle, the seat of the shoguns; today it is the public forecourt of the emperor’s residence. From here you can see the stone bridge on the palace approach.",
+    "ja": "黒松の向こうに堀と正門石橋が見える。将軍の江戸城だった土地が、今は皇居の正面に広がる国民公園になっている。"
+  },
+  "Tokyo|0x60188cb479620a33:0x34bcc78ce7f8bf3e": {
+    "en": "The lawns beside Harajuku once held housing for American military families, then the athletes’ village for the 1964 Tokyo Olympics. The park opened in 1967. A surviving Olympic village house gives that history a human scale.",
+    "ja": "原宿の隣の芝生には、戦後の米軍宿舎、そして1964年東京五輪の選手村があった。1967年に公園となり、今も選手村の宿舎が一棟残る。"
+  },
+  "Tokyo|0x60188dbdf73e4461:0x7648774313f66fe5": {
+    "en": "This is poetry you can walk through. Yanagisawa Yoshiyasu shaped hills, islands and a pond on an Edo estate to evoke landscapes celebrated in waka, Japan’s classical verse. Walk around the water and the scene changes with each bend.",
+    "ja": "柳澤吉保が駒込の屋敷地に築いた、和歌の風景を歩く庭。池を巡ると築山や中の島の重なりが変わり、歌に詠まれた景色が現れる。"
+  },
+  "Tokyo|0x60188c4646de5005:0x1b220216ae23c25e": {
+    "en": "The Tokugawa lords of Mito built a garden where a short walk could take a guest through famous landscapes of Japan and China. Look for Engetsu-kyo, the stone bridge whose arch completes a circle in the water.",
+    "ja": "水戸徳川家の江戸屋敷に造られた、日中の名勝を巡る庭。円月橋では、石のアーチと水面に映る影が満月を描く。"
+  },
+  "Tokyo|0x60188c2acac1c13b:0x23941711c439d23f": {
+    "en": "Follow the cherry-lined avenue through one of Tokyo’s historic public cemeteries. Tokugawa Yoshinobu, Japan’s last shogun, is buried here. The narrow lanes lead back into Yanaka, still a neighbourhood of temples and family graves.",
+    "ja": "桜並木の先に、江戸幕府最後の将軍・徳川慶喜も眠る。今も家族がお墓参りに通う霊園で、路地を抜けると谷中の寺町に続く。"
+  },
+  "Tokyo|0x60188c20944ac5a3:0x58638bc622e5b86a": {
+    "en": "In summer, lotus leaves can hide almost every trace of water on one side of this Ueno pond. Follow the causeway to the red hall of Benzaiten, a deity associated with music and water, and the park takes on the feel of a pilgrimage.",
+    "ja": "夏はハスの葉が水面を覆う上野の池。参道を渡ると、水や音楽にゆかりの弁才天を祀る弁天堂に着く。"
+  },
+  "Tokyo|0x60188c13425af13d:0xa31b000a35db03f9": {
+    "en": "Enter the former heart of Edo Castle on foot. The huge stone platform once carried the shogun’s castle tower; today its open top gives you a sense of how much ground the castle commanded.",
+    "ja": "江戸城の本丸跡を歩ける皇居東御苑。天守が失われた今も巨大な石の天守台が残り、上から本丸の広さが分かる。"
+  },
+  "Tokyo|0x60188c13425af13d:0xcddc54b9602f548d": {
+    "en": "Inside the East Gardens, leave the castle ramparts for a pond garden. Its present design draws on a plan from the time of the ninth Tokugawa shogun. In early summer the irises give the old palace grounds a different colour palette.",
+    "ja": "皇居東御苑の二の丸にある池の庭。九代将軍・徳川家重の時代の絵図をもとに整備され、初夏は花菖蒲が彩る。"
+  },
+  "Tokyo|0x60188cc963c8d41d:0xfebf16ff398d39f1": {
+    "en": "Meiji Jingu also has a place for budo, the Japanese martial arts. Shiseikan is its training hall, where disciplines such as archery are practised. The map pin marks a working dojo within the shrine grounds.",
+    "ja": "明治神宮の境内にある武道場。弓道などの稽古を通じて心身を鍛える場で、参拝する社殿とは役割が異なる。"
+  },
+  "Tokyo|0x601fa6c4e4114317:0xef431afda2747c8f": {
+    "en": "Hie Shrine is the home of Tokyo’s Sanno Matsuri. Look beside the worship hall for a pair of monkeys: at this shrine monkeys are messengers of the deity. Locals affectionately call the shrine Sanno-san.",
+    "ja": "江戸の祭り・山王祭の「山王さん」。拝殿の脇で迎えるのは一対の神猿。この社では猿が神様の使いとされる。"
+  },
+  "Tokyo|0x60188cbb44148d5b:0xc0625df2fd2a8e82": {
+    "en": "Just off Harajuku’s fashion streets, this shrine honours Admiral Togo Heihachiro. His association with victory at sea helps explain why visitors now come to pray for success in a match or another personal challenge.",
+    "ja": "原宿のにぎわいのすぐ裏に、海軍軍人・東郷平八郎を祀る社がある。「勝利の神様」として、試合や勝負事を前に訪れる人もいる。"
+  },
+  "Tokyo|0x60188d2e878cbd75:0x2ba7eeac3d17b982": {
+    "en": "This pin marks a torii gate in the grounds of Togo Shrine. It once stood at Suiko Shrine, associated with Japan’s navy. The gate was dedicated here in 1981; its plaque explains why this small piece of naval history is in Harajuku.",
+    "ja": "東郷神社の境内に残る水交神社の鳥居。旧海軍ゆかりの社から移り、1981年に奉納された。傍らの由来板に原宿へ来た経緯が記されている。"
+  },
+  "Tokyo|0x60188cb79a4c26e5:0x8fca893849103f73": {
+    "en": "Walk from Harajuku Station into a forest planted with donated trees. The shrine opened in 1920 to honour Emperor Meiji and Empress Shoken. The long approach through the trees is part of the memorial people created for the imperial couple.",
+    "ja": "原宿駅を出て献木の森を歩くと、明治天皇と昭憲皇太后を祀る社殿に着く。1920年の創建。二人をしのんで人々が育てた森そのものが見どころ。"
+  },
+  "Tokyo|0x60188c680dae43d5:0xb5e754e6bf88ce90": {
+    "en": "Founded in 1869, Yasukuni enshrines people who died in service to Japan in its wars. Families come to remember relatives. The inclusion of leaders prosecuted as Class A war criminals has also made official visits a subject of dispute, in Japan and abroad.",
+    "ja": "1869年創建。日本の戦争などで国に殉じた人々を祀り、遺族が慰霊に訪れる。東京裁判のA級戦犯の合祀を背景に、政治家の参拝をめぐって国内外で議論が続く。"
+  },
+  "Tokyo|0x60188911e0485d2b:0x9fbb1c28c26c66e6": {
+    "en": "Fukagawa’s Hachiman shrine has a second place in Tokyo life: the history of sumo. Public bouts were held here in the Edo period. Look for the stone monument engraved with the names of yokozuna, the sport’s grand champions.",
+    "ja": "深川の八幡さまは、江戸勧進相撲ゆかりの地。参拝のあとに横綱力士碑を見ると、大相撲の最高位に立った力士の名が並ぶ。"
+  },
+  "Tokyo|0x60188c1ecc161bed:0xf397e4b6bf417c8b": {
+    "en": "Kanda Myojin is the familiar name of this shrine near Akihabara. Its Kanda Matsuri brings neighbourhoods together around portable shrines. Look closely at the charms and you may find protection for electronics alongside older prayers for prosperity.",
+    "ja": "神田明神の名で親しまれ、神田祭には氏子の町々から神輿が集う。商売繁盛に加えてITのお守りもあるところに、秋葉原を氏子に持つ社らしさが表れる。"
+  },
+  "Kyoto|0x60010879a010eca9:0xc77ac89d5a241ae9": {
+    "en": "In Kyoto, Gion-san means Yasaka Shrine. It honours Susanoo and is the shrine behind the Gion Matsuri, which grew out of rites to quell epidemics. The festival’s portable shrines carry its deities into the city.",
+    "ja": "京都で「祇園さん」といえば八坂神社。素戔嗚尊を祀り、疫病退散を願った祇園祭の社として知られる。祭りでは神輿が神様を乗せて町へ出る。"
+  },
+  "Kyoto|0x600107ed7bf0e06d:0x5b26fec16c2eee1a": {
+    "en": "A Tenmangu honours Sugawara no Michizane, a scholar and statesman revered as Tenjin, the deity of learning. Founded in Kyoto in 947, Kitano is a centre of that tradition. Before exam season, students come to ask for a good result.",
+    "ja": "天満宮が祀る「天神さん」は、学者・政治家だった菅原道真。947年創建の北野天満宮は天神信仰の中心で、受験を前に学業成就を願う人が訪れる。"
+  },
+  "Osaka|0x6000e6dba42a1cef:0xa135ef22a79f6eb2": {
+    "en": "Osaka’s Tenjin-san honours the same scholar as Kyoto’s Kitano Tenmangu. Shrine tradition says Michizane stopped here on his way into exile. In July, the Tenjin Matsuri takes worship out onto Osaka’s waterways in a procession of boats.",
+    "ja": "大阪の「天神さん」も菅原道真を祀る。左遷されて大宰府へ向かう途中、この地に参ったという。夏の天神祭では、船渡御が水の都の川を行く。"
+  },
+  "Mie|0x6004578074c15005:0x6998153103f04925": {
+    "en": "The two rocks tied by a sacred rope offshore are called Meoto Iwa, the Wedded Rocks. Futami was a place for pilgrims to purify themselves by the sea before visiting the shrines of Ise. That journey gives this shoreline its religious meaning.",
+    "ja": "しめ縄で結ばれた夫婦岩が目印。二見の浜は伊勢参りの前に身を清めた禊の地で、海辺の景色は参宮の道筋と結びついている。"
+  },
+  "Mie|0x60045a8448dc91ef:0xa4ae3d71f472dbc7": {
+    "en": "Ise has two main sanctuaries on separate sites. Geku, the Outer Shrine, honours Toyouke, provider of sacred food; offerings are prepared morning and evening. Pilgrims traditionally visit here before Naiku, the Inner Shrine, which honours the sun deity Amaterasu.",
+    "ja": "外宮と内宮は別々の場所にある。外宮は神々の食を司る豊受大御神を祀り、朝夕に御食事を供える。ここから天照大御神を祀る内宮へ参るのが古くからのならわし。"
+  },
+  "Mie|0x60045a714446fdfd:0x4f1a14ef2d80ac06": {
+    "en": "This sanctuary honours Yamatohime. In shrine tradition she journeyed in search of a home for Amaterasu and brought her worship to Ise. Her shrine belongs to Naiku, the Inner Shrine, although it stands apart from the main grounds.",
+    "ja": "天照大御神を祀る地を求めて旅をし、伊勢へ導いたと伝わる倭姫命の宮。内宮に属する別宮だが、内宮の境内とは別の場所に鎮座する。"
+  },
+  "Mie|0x60043a166bb485ff:0xfad10f908a745cea": {
+    "en": "Follow the cedar-lined approach in Taiki to two sanctuaries dedicated to Amaterasu. Takihara is known as a distant sanctuary of Naiku. Its location helps explain why “Ise Jingu” describes a family of shrines spread well beyond Ise city.",
+    "ja": "大紀町の杉木立の奥に、天照大御神の御魂を祀る二つの宮が並ぶ。内宮の「遙宮」と呼ばれ、伊勢神宮の信仰が伊勢市の外まで広がることを伝える。"
+  },
+  "Tokyo|0x60188e8aa5c86fa1:0x8a960e5ba43f1bf3": {
+    "en": "Maruzen began in 1931 as a wholesaler of freshwater fish. That is a different route into Tokyo’s eel trade: in Minowa, the story of the grilled eel at the counter begins with the people who supplied the fish.",
+    "ja": "三ノ輪の丸善は1931年、川魚の卸問屋として創業。蒲焼きの香りがする店先には、川魚を仕入れて売る商いから始まった歴史がある。"
+  },
+  "Tokyo|0x6018f37ea735e801:0xfa40f3db356e15a6": {
+    "en": "Take the Setagaya tram to Shoin-jinja-mae and walk into Wakabayashi’s residential streets. Hifumi was already described as a seventy-year-old eel house in a 2004 report. Order shirayaki to try eel grilled without the sweet soy glaze.",
+    "ja": "世田谷線・松陰神社前から若林の住宅街へ。2004年の取材ですでに創業70年と紹介されたうなぎ割烹で、白焼きならタレを使わず焼いた鰻を味わえる。"
+  },
+  "Tokyo|0x60188b415b63c9bd:0x44cb0ebd3e04d8a8": {
+    "en": "For an older generation in Ebisu, Togawa was the eel house on the west side of town. The local Ebisu newspaper recorded that neighbourhood association in interviews. The kitchen steams the eel and finishes it on the grill.",
+    "ja": "恵比寿新聞の地元取材に「西の登川」として登場する鰻屋。昔から店を方角で呼び分けた町の記憶を、蒸してから焼く蒲焼きとともに味わえる。"
+  },
+  "Tokyo|0x60188c530aac738f:0x4ff8b8cd1062daa5": {
+    "en": "Ishibashi opened in 1910, near the end of the Meiji era. In Edogawabashi, it shares a neighbourhood with the much older Hashimoto. The two names on the map tell you how long eel has been a local speciality here.",
+    "ja": "明治末の1910年創業。江戸川橋には江戸時代からの「はし本」もあり、地図に二軒の名が並ぶところに、この町の鰻の歴史が見える。"
+  },
+  "Tokyo|0x60188ef4421d1ed1:0x75da5e39a74ffcbb": {
+    "en": "Obana’s roots in Minami-Senju go back to the Meiji era. It is a place to discover the soft texture of Kanto-style eel, steamed before its final grilling. Unaju is the dish of glazed eel served over rice in a lidded box.",
+    "ja": "南千住で明治期から続く尾花。蒸してから焼く関東風のやわらかさを、蓋付きの重箱で蒲焼きとご飯をいただく「うな重」で味わえる。"
+  },
+  "Tokyo|0x60188bbd2e0de3ad:0xaf851dc1ac96e866": {
+    "en": "Nodaiwa traces its beginnings to the Kansei era, when Tokyo was still Edo and ruled by the shoguns. Godaime in its name means “fifth generation”: the sign itself tells you that this eel-grilling craft passed from one generation to the next.",
+    "ja": "野田岩の始まりは、東京がまだ江戸だった寛政年間。店名の「五代目」は職人の代を数える言葉で、蒲焼きの技を受け継いできた店の歴史が看板に表れている。"
+  },
+  "Tokyo|0x60188c54972f0bf7:0xef81159d64b3e4c1": {
+    "en": "In 1835 a man named Monjiro opened a kabayaki shop at the foot of Ishikiri Bridge. Hashimoto still gives that bridge as its starting point. Kabayaki means eel brushed with sauce and grilled — the dish on which the house was built.",
+    "ja": "天保6年（1835）、初代・紋次郎が石切橋のたもとで始めた蒲焼きの店。橋を目印にたどると、江戸の客もここで鰻を求めたことが想像できる。"
+  },
+  "Tokyo|0x60188c64a235c421:0x8e57b2997061c0fe": {
+    "en": "Akimoto has served eel in Kojimachi since 1909. One house presentation brings the glazed eel and the rice in separate tiers, so lifting the lid reveals a little of the restaurant’s own way of serving a familiar Tokyo dish.",
+    "ja": "麹町で1909年に暖簾を掲げた秋本。鰻とご飯を別々の段に納めるお重があり、東京で親しまれる蒲焼きにも店ごとの流儀が見える。"
+  },
+  "Tokyo|0x60188951a2233655:0xf0e02d68adaa6717": {
+    "en": "Two generations ran Umeda in Ningyocho before a new operator took it on and appointed a third head chef in 2026. The house Umeda-don pairs eel with umeboshi, a tart pickled plum — an unusual pairing in Japanese food lore.",
+    "ja": "人形町で二代続いた梅田の暖簾は事業承継を経て、2026年に三代目料理長へ。名物の梅田丼は、昔から食べ合わせの言い伝えがある鰻と梅干しをあえて合わせる。"
   }
 };

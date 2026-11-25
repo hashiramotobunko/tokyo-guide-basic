@@ -1,4 +1,4 @@
-import { visitorNotes } from './visitor-notes.mjs';
+import { visitorNotes } from './visitor-notes.mjs?v=gardens';
 import { recordPlaceSave, saveCountsEnabled } from './save-count.mjs';
 import { readPersonalRoutes, writePersonalRoutes } from './route-library.mjs';
 import {collectionArt} from './genre-art.mjs';
@@ -127,7 +127,7 @@ function home() {
   const scope = state.region || `${unique(places.map(place => place.city)).length} regions`;
   return `${homeSearch()}
     <div class="section-top">
-      <h1>${ui('Explore by Genre','ジャンルから探す')}</h1>
+      <h1 id="genres" tabindex="-1">${ui('Explore by Genre','ジャンルから探す')}</h1>
       <div class="genre-index-note">
         <p>${esc(scope)} · ${placeCount(count)}</p>
         <a href="#more-genres">${ui('More genres ↓','ほかのジャンルへ')}</a>
@@ -385,4 +385,4 @@ document.addEventListener('change', event => {
 });
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.save){const id=b.dataset.save;saved.has(id)?saved.delete(id):saved.add(id);try{localStorage.setItem('shakedown-basic-saved-v1',JSON.stringify([...saved]));if(saved.has(id)&&saveCountsEnabled)void recordPlaceSave(id);toast(saved.has(id)?'Place saved':'Place removed from Saved')}catch{toast('Browser storage is unavailable. Changes will last for this visit only.')}if(state.page==='saved')render();else{b.setAttribute('aria-pressed',saved.has(id));b.textContent=saved.has(id)?'★':'☆';b.setAttribute('aria-label',saveLabel(places.find(p=>p.id===id),saved.has(id)));$('#saved-count').textContent=saved.size}}else if(b.dataset.map){go({view:'map',place:b.dataset.map});$('.map-panel')?.scrollIntoView({block:'start',behavior:'smooth'})}else if(b.dataset.view){go({view:b.dataset.view});$('#results')?.scrollIntoView({block:'start'})}else if(b.dataset.clear){const k=b.dataset.clear;go(k==='filters'?{q:'',region:'',area:'',cat:''}:{[k]:'',...(k==='region'?{area:''}:{})})}else if(b.id==='more'){limit+=36;const y=scrollY;render();scrollTo(0,y)}});
 window.addEventListener('popstate',()=>{state=readState(location.search);limit=36;render()});
-try{[places,genres,routes]=await Promise.all(['places','genres','routes'].map(async f=>{const r=await fetch('./data/'+f+'.json');if(!r.ok)throw Error(r.status);return r.json()}));render()}catch(e){$('#main').innerHTML=`<div class="error"><h1>${ui('Could not load the guide','ガイドを読み込めませんでした')}</h1><p>${ui('Check your connection and try again.','接続を確認して再試行してください。')}</p><button onclick="location.reload()">${ui('Try again','再試行')}</button></div>`;console.error(e)}
+try{[places,genres,routes]=await Promise.all(['places','genres','routes'].map(async f=>{const r=await fetch('./data/'+f+'.json');if(!r.ok)throw Error(r.status);return r.json()}));render();if(location.hash==='#genres')$('#genres')?.scrollIntoView()}catch(e){$('#main').innerHTML=`<div class="error"><h1>${ui('Could not load the guide','ガイドを読み込めませんでした')}</h1><p>${ui('Check your connection and try again.','接続を確認して再試行してください。')}</p><button onclick="location.reload()">${ui('Try again','再試行')}</button></div>`;console.error(e)}
