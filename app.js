@@ -184,6 +184,55 @@ function placeCard(p){const isSaved=saved.has(p.id);const tip=p.note?.en||p.desc
 function hero(){const exact=genres.find(g=>g.id===state.genre.replace(/^category:/,'')&&(!state.cat||g.name===state.cat));const group=!state.cat&&GROUPS.find(g=>g.id===state.genre);const title=group?.name||exact?.name||'Explore';const image=group?.hero||exact?.hero;const ja=group?.ja||genreJapanese[exact?.id];return image?`<section class="genre-hero"><img src="assets/images/genre-heroes/${image}.webp" alt="Original illustration for ${esc(title)}" width="960" height="1200"><div><span class="eyebrow">EXPLORE / ${esc(title.toUpperCase())}</span><h1>${ui(title,ja)}</h1><small>${group?.id==='cafes'?'Artwork: Café / Tea':'Original artwork'}</small><p><a class="text-link" href="#results">${ui('View places ↓','お店・スポットを見る')}</a></p></div></section>`:`<h1 class="page-heading">${esc(state.page==='saved'?'Saved':title)}</h1>`}
 function filters(sortOnly=false){const base=matchPlaces(places,{genre:state.genre,region:state.region,page:state.page,cat:state.cat},genres,saved);const cats=genreCats(state,genres);return `<div class="filters">${sortOnly?'':`<label>${ui('Area', 'エリア')}<select data-filter="area">${option('','All areas',state.area)}${unique([...base.map(p=>p.area),...(state.area?[state.area]:[])]).map(x=>option(x,x,state.area)).join('')}</select></label><label>${ui('Genre', 'ジャンル')}<select data-filter="cat">${option('','All genres',state.cat)}${genres.filter(g=>!cats||cats.includes(g.name)).map(g=>option(g.name,g.name,state.cat)).join('')}</select></label>`}<label>${ui('Sort by', '並び替え')}<select data-filter="sort">${option('','North to south · 北から南',state.sort==='area'?'':state.sort)}${option('south-to-north','South to north · 南から北',state.sort)}${option('name','Name (A–Z)',state.sort)}${option('name-desc','Name (Z–A)',state.sort)}</select></label></div>`}
 function conditions(){return `<div class="conditions" aria-label="Active filters">${['region','area','cat','q'].filter(k=>state[k]).map(k=>`<button data-clear="${k}" aria-label="Clear ${esc(state[k])} filter">${esc(state[k])} ×</button>`).join('')}${['region','area','cat','q'].some(k=>state[k])?`<button data-clear="filters">${ui('Clear filters','絞り込みを解除')}</button>`:''}</div>`}
+let savedTab = 'find';
+let savedMapOpen = false;
+function savedRows() {
+  const rows = matchPlaces(places, {...state, page: savedTab === 'stars' ? 'saved' : 'explore'}, genres, saved);
+  return `<p role="status">${placeCount(rows.length)}</p>` +
+    rows.slice(0,limit).map(p => `<article class="pick-row"><div><strong>${esc(displayName(p))}</strong>
+    <small>${esc(p.name)} · ${esc(p.area)} · ${esc(p.cat)}</small></div>
+    <button data-save="${esc(p.id)}" aria-pressed="${saved.has(p.id)}">${saved.has(p.id)?'★ Saved':'☆ Save'}</button>
+    <button data-pick-stop="${esc(p.id)}" ${routeDraft.stops.includes(p.id)?'disabled':''}>${routeDraft.stops.includes(p.id)?'In route':'+ Add to route'}</button>
+    ${link(p.url,'Google Maps ↗')}</article>`).join('') +
+    (rows.length>limit ? '<button id="more" class="more">Show more places</button>' : '') +
+    (!rows.length ? `<p>${savedTab==='stars'&&!saved.size?'Choose Find places and tap Save beside a shop.':'Try another keyword or clear the filters.'}</p>` : '');
+}
+function savedPage() {
+  const tabs = [['find','Find places'],['stars','My saved places · '+saved.size],['routes','My Routes']];
+  return `<h1 class="page-heading">Saved</h1><div class="saved-tabs">${tabs.map(([id,label])=>`<button data-saved-tab="${id}" aria-pressed="${savedTab===id}">${label}</button>`).join('')}</div>` +
+    (savedTab==='routes' ? personalRouteSection() : `<div id="saved-search">${homeSearch()}</div>
+      ${conditions()}<details class="saved-map-details" ${savedMapOpen?'open':''}><summary>Find on Google Maps</summary>${savedMapSection()}</details>
+      <section id="results">${savedRows()}</section>`) +
+    '<details><summary>How to use Saved</summary>'+savedInstructions()+'</details>';
+}
+document.addEventListener('click', event => {
+  const b=event.target.closest('button');
+  if (!b || state.page!=='saved') return;
+  if (b.dataset.savedTab) {
+    savedTab=b.dataset.savedTab;
+    go({page:'saved'},true);
+  } else if (b.dataset.pickStop && !routeDraft.stops.includes(b.dataset.pickStop)) {
+    routeDraft.stops.push(b.dataset.pickStop);
+    savedTab='routes';
+    render();
+    document.querySelector('[name="routeName"]')?.focus();
+  }
+});
+document.addEventListener('toggle', event => {
+  if(event.target.matches?.('.saved-map-details')) savedMapOpen=event.target.open;
+},true);
+function updateSavedSearch(form) {
+  const data=new FormData(form);
+  Object.assign(state,{q:data.get('q').trim(),region:data.get('region'),area:data.get('area'),cat:data.get('cat')});
+  limit=36;
+  history.replaceState(null,'',stateURL(state));
+  $('#results').innerHTML=savedRows();
+  const chips=document.querySelector('.conditions');
+  if(chips) chips.outerHTML=conditions();
+}
+document.addEventListener('input', event=>{
+  if(state.page==='saved' && event.target.name==='q') updateSavedSearch(event.target.form);
+});
 function results(){const savedSearch=state.page==="saved" && Boolean(state.q||state.region||state.area||state.cat);const matches=matchPlaces(places,savedSearch?{...state,page:"explore"}:state,genres,saved),selected=matches.find(p=>p.id===state.place)||matches[0];let html=`<a class="back" href="./">${ui('← Explore','ジャンル選択に戻る')}</a>${hero()}${state.page === 'saved' ? savedMapSection() + savedInstructions() + personalRouteSection() + '<h2 id="saved-search">Search all guide places</h2>' + homeSearch() : ''}${state.page==="saved"?"":search()}${filters(state.page==="saved")}${conditions()}<section id="results"><div class="results-bar"><h2>${state.page==="saved"?(savedSearch?"Guide matches · ":"Saved places · "):""}${ui(placeCount(matches.length), `${matches.length}件のお店・スポット`)}</h2><div class="switch" aria-label="View mode"><button data-view="list" aria-pressed="${state.view!=='map'}">${ui('List','一覧')}</button><button data-view="map" aria-pressed="${state.view==='map'}">${ui('Map','地図')}</button></div></div>`;
  if(!matches.length)return html+`<div class="empty"><h3>${state.page==='saved'&&!savedSearch&&!saved.size?'No saved places yet':ui('No matching places','条件に合う場所が見つかりません')}</h3><p>${state.page==='saved'&&!savedSearch&&!saved.size?'Explore the guide and tap a star to start your list.':ui('Try a different keyword or filter.','キーワードや絞り込み条件を変えてお試しください。')}</p><a class="text-link" href="./">${ui('Browse genres →','ジャンルから探す')}</a></div></section>`;
  const list=`<div><div class="places">${matches.slice(0,limit).map(placeCard).join('')}</div>${matches.length>limit?`<button class="more" id="more">${ui(`Show more (${Math.min(limit,matches.length)} / ${matches.length})`,'さらに表示')}</button>`:''}</div>`;
@@ -257,7 +306,7 @@ function routeWorkspace() {
       ${choices.map(id => option(id, displayName(byId.get(id)), '')).join('')}
     </select></label>
     <button type="button" data-route-add disabled>Add stop</button>
-    ${stops ? `<ol class="route-stops">${stops}</ol>` : '<p class="route-empty">Save a place in Explore, then add it here as a stop.</p>'}
+    ${stops ? `<ol class="route-stops">${stops}</ol>` : '<p class="route-empty">Choose Find places, then Add to route beside a shop.</p>'}
     <div class="route-actions">
       <button class="route-submit" type="submit" ${stops ? '' : 'disabled'}>Save route</button>
       ${routeDraft.id ? '<button type="button" data-route-delete>Delete route</button>' : ''}
@@ -352,7 +401,7 @@ document.addEventListener('submit', event => {
   toast('Route saved');
 });
 
-function render(){const isHome=!state.page&&!state.genre&&!state.q&&!state.area&&!state.cat;document.body.classList.toggle('home-page',isHome);document.body.classList.toggle('english-only',['saved','about'].includes(state.page));$('#main').innerHTML=state.page==='walks'?walks():state.page==='about'?about():isHome?home():results();if(state.page==='saved') void attachSavedMap(places,saved,displayName);$('#saved-count').textContent=saved.size;document.querySelectorAll('nav a').forEach(a=>{const p=new URL(a.href).searchParams.get('page')||'';if(p===(state.page==='walks'||state.page==='about'||state.page==='saved'?state.page:''))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});document.title=(state.page==='saved'?'Saved':state.page==='about'?'About':state.genre?GROUPS.find(g=>g.id===state.genre)?.name||genres.find(g=>g.id===state.genre.replace(/^category:/,''))?.name||'Explore':state.page==='walks'?'Walks':'Explore')+' — SHAKEDOWN STREET';}
+function render(){const isHome=!state.page&&!state.genre&&!state.q&&!state.area&&!state.cat;document.body.classList.toggle('home-page',isHome);document.body.classList.toggle('english-only',['saved','about'].includes(state.page));$('#main').innerHTML=state.page==='saved'?savedPage():state.page==='walks'?walks():state.page==='about'?about():isHome?home():results();if(state.page==='saved') void attachSavedMap(places,saved,displayName);$('#saved-count').textContent=saved.size;document.querySelectorAll('nav a').forEach(a=>{const p=new URL(a.href).searchParams.get('page')||'';if(p===(state.page==='walks'||state.page==='about'||state.page==='saved'?state.page:''))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});document.title=(state.page==='saved'?'Saved':state.page==='about'?'About':state.genre?GROUPS.find(g=>g.id===state.genre)?.name||genres.find(g=>g.id===state.genre.replace(/^category:/,''))?.name||'Explore':state.page==='walks'?'Walks':'Explore')+' — SHAKEDOWN STREET';}
 document.addEventListener('submit', event => {
   const form = event.target;
   if (form.id !== 'search') return;
@@ -375,7 +424,10 @@ document.addEventListener('submit', event => {
 
 document.addEventListener('change', event => {
   const field = event.target;
-  if (field.dataset.filter) {
+  if(state.page==='saved' && field.form?.id==='search'){
+    if(field.name==='region') field.form.elements.area.innerHTML=areaOptions(field.value);
+    updateSavedSearch(field.form);
+  } else if (field.dataset.filter) {
     go({ [field.dataset.filter]: field.value });
   } else if (field.name === 'region') {
     if (field.form?.hasAttribute('data-home-search')) {

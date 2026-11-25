@@ -350,3 +350,14 @@ footer {padding-bottom: 75px;}
 .picker-detail a {text-decoration:underline;}
 
 .picker-map iframe { display:block; width:100%; height:100%; border:0; }
+
+.saved-tabs,.pick-row {display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.saved-tabs {margin:16px 0}
+.saved-tabs button,.pick-row button {border:1px solid #bbb7ad;background:white;color:#26231f;border-radius:5px;min-height:44px;padding:7px 13px}
+.saved-tabs button[aria-pressed=true],.pick-row button[aria-pressed=true]{background:#342c25;color:white}
+.pick-row {border-top:1px solid #ddd8cf;padding:12px 0}
+.pick-row div {flex:1 1 240px}
+.pick-row small {display:block;color:#605c55;margin-top:3px}
+.pick-row a {text-decoration:underline}
+.saved-map-details {margin:12px 0}
+@media(max-width:600px){.pick-row div{flex-basis:100%}.saved-tabs{gap:4px}.saved-tabs button{padding:6px 8px}}
