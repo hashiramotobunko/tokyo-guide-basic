@@ -20,7 +20,8 @@ function comparePlaces(a, b, sort) {
   const byName = () => a.name.localeCompare(b.name, 'ja');
   if (sort === 'name') return byName();
   if (sort === 'name-desc') return -byName();
-  return (regionRank.get(a.city) ?? 99) - (regionRank.get(b.city) ?? 99)
+  const direction = sort === 'south-to-north' ? -1 : 1;
+  return direction * ((regionRank.get(a.city) ?? 99) - (regionRank.get(b.city) ?? 99))
     || alphabetical.compare(a.area, b.area)
     || byName();
 }
