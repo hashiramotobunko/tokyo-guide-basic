@@ -1,4 +1,4 @@
-import { visitorNotes } from './visitor-notes.mjs?v=gardens';
+import { visitorNotes } from './visitor-notes.mjs?v=temples';
 import { recordPlaceSave, saveCountsEnabled } from './save-count.mjs';
 import { readPersonalRoutes, writePersonalRoutes } from './route-library.mjs';
 import {collectionArt} from './genre-art.mjs';

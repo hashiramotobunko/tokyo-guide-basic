@@ -378,5 +378,61 @@ export const visitorNotes = {
   "Tokyo|0x60188951a2233655:0xf0e02d68adaa6717": {
     "en": "Two generations ran Umeda in Ningyocho before a new operator took it on and appointed a third head chef in 2026. The house Umeda-don pairs eel with umeboshi, a tart pickled plum — an unusual pairing in Japanese food lore.",
     "ja": "人形町で二代続いた梅田の暖簾は事業承継を経て、2026年に三代目料理長へ。名物の梅田丼は、昔から食べ合わせの言い伝えがある鰻と梅干しをあえて合わせる。"
+  },
+  "Tokyo|0x60188c7e121ee92b:0x5761574668b96c9": {
+    "en": "Why are there foxes at a Buddhist temple? This Akasaka branch of Toyokawa Inari belongs to the Soto Zen tradition. Its guardian, Dakini Shinten, is depicted riding a white fox. The fox figures in the grounds are a clue to whom people come to worship.",
+    "ja": "「稲荷」と聞くと神社を思い浮かべるが、赤坂の豊川稲荷は曹洞宗のお寺。お祀りする豊川ダ枳尼眞天は白狐に乗る姿で表される。境内の狐たちを見ると、そのつながりが分かる。"
+  },
+  "Tokyo|0x60188e818f384bb3:0x37e58f8927830467": {
+    "en": "Ueno lies northeast of the old shogun’s castle. In Edo, that direction was called kimon, the “demon gate.” In 1625 the monk Tenkai founded Kaneiji here to guard the city spiritually, much as Mount Hiei guarded Kyoto. That is why the temple calls itself the Mount Hiei of the East.",
+    "ja": "江戸城から見て上野は、災いが入りやすいと考えられた北東の「鬼門」。京都を守る比叡山にならい、天海が1625年にこの地に建てたのが寛永寺。山号の「東叡山」は、東の比叡山という意味だ。"
+  },
+  "Kyoto|0x6001a820c0eb46bd:0xee4272b1c22645f": {
+    "en": "Across the pond, the upper two storeys of the Golden Pavilion gleam with gold leaf. The building is a shariden, a hall for Buddhist relics. It stands on what was once the retirement estate of the shogun Ashikaga Yoshimitsu; the pavilion’s nickname became the name everyone uses for the temple, officially Rokuonji.",
+    "ja": "池越しに光る金閣は、二層と三層に金箔を張った舎利殿。仏舎利を納めるための建物だ。足利義満の山荘を寺に改めた鹿苑寺が、舎利殿の愛称で「金閣寺」と呼ばれるようになった。"
+  },
+  "Kyoto|0x600109050b426fe1:0x258aca1ce888abc9": {
+    "en": "If you have seen the Golden Pavilion, look closely at the wood here: the Silver Pavilion was never covered in silver leaf. Its upper floor was built for Kannon, the Buddhist figure of compassion. The shogun Ashikaga Yoshimasa’s retirement villa became the Zen temple formally called Jishoji.",
+    "ja": "金閣を見たあとなら、銀閣の木肌に目を向けたい。銀箔を張った建物ではなく、上層に観音さまを祀る観音殿だ。将軍・足利義政の山荘はその死後に禅寺となり、正式には慈照寺という。"
+  },
+  "Kyoto|0x600108d385dcfb07:0x62af658650c434ba": {
+    "en": "From the famous wooden stage, turn back towards the hall for a moment. The stage was built so that music and dance could be offered to Kannon, the Buddhist figure of compassion worshipped here. From that angle, the hall makes sense as the place of honour for the performance.",
+    "ja": "舞台に出たら、京都の眺めから一度、本堂へ振り返ってみたい。清水の舞台は、ご本尊の観音さまに舞や音楽を奉納するための場所。芸能を受ける観音さまの側から見ると、舞台の向きにも意味がある。"
+  },
+  "Kyoto|0x600108dc414283b9:0x609373abd0eaf97c": {
+    "en": "Beyond the great Sanmon gate lies the head temple of Jodo Shu, the Pure Land tradition founded by Honen. He taught people to call the name of Amida Buddha. The words you may hear here, “Namu Amida Butsu,” are that practice in its simplest form.",
+    "ja": "大きな三門の先にあるのは、法然が開いた浄土宗の総本山。阿弥陀さまの名を称える道を広く人々に説いた。「南無阿弥陀仏」という念仏の声は、その教えが今も続く音だ。"
+  },
+  "Kyoto|0x600109217397fbfd:0x38b339a4c7e7004d": {
+    "en": "Walk past the great wooden gate of this Zen temple and a second set of arches comes into view, built of red brick. This is the Suirokaku aqueduct, carrying water from the Lake Biwa Canal. A walk through one temple takes you from the world of Zen monasteries to the engineering of modern Kyoto.",
+    "ja": "禅寺の大きな三門を抜けると、境内の奥に赤れんがのアーチが現れる。琵琶湖疏水の水を通す水路閣だ。木造の伽藍から水路橋まで歩くと、京都に重なる二つの時代が見えてくる。"
+  },
+  "Kyoto|0x6001091ada6f787d:0x62ef00e72d5d2003": {
+    "en": "Beyond the thatched gate are two low banks of white sand, one on each side of the path. They represent water. Walking between them symbolises cleansing yourself before entering sacred ground. Pause to look at the patterns drawn into the sand.",
+    "ja": "茅葺きの山門をくぐると、道の両側に模様を描いた白い砂の壇がある。「白砂壇」は水を表し、その間を通って心身を清め、仏さまの領域へ入る。門から続く短い道もお参りの一部だ。"
+  },
+  "Kyoto|0x6001a82a301cbaa7:0xe1ab173e46d78542": {
+    "en": "Sit on the veranda facing the rock garden. Fifteen stones sit in five groups in a rectangle of raked gravel. Shift your seat a little and a different stone slips behind its neighbour. People have read islands, mountains and animals into this garden; take a moment to see what its shapes suggest to you.",
+    "ja": "方丈の縁側に座ると、白砂に大小十五の石が五つのまとまりで置かれている。少し座る位置を変えるだけで、石の重なり方が変わる。島にも山にも見える余白を、自分の目で味わいたい。"
+  },
+  "Kyoto|0x60014892900d9fad:0x62c711aa6c6015c1": {
+    "en": "Tofukuji’s name borrows “To” from Todaiji and “fuku” from Kofukuji, two great temples in Nara. Its patron wanted Kyoto to have a monastery to match them. On the covered Tsutenkyo bridge, look down: the maple-filled ravine gives a sense of the scale of the grounds.",
+    "ja": "東福寺の「東」は奈良の東大寺、「福」は興福寺から。九条道家が京都にも両寺に並ぶ大寺院をと願って名づけた。通天橋からカエデの谷を見下ろすと、谷をまたぐほどの境内の広さを実感できる。"
+  },
+  "Kyoto|0x6001086d76f895d7:0x99e04406adf29aa8": {
+    "en": "The Golden and Silver Pavilions both belong to the Zen branch headed by Shokokuji. Here, look for public openings of the Dharma Hall, where monks hear Buddhist teachings. A painted dragon coils across its ceiling; an echo beneath it gave the painting its nickname, the “crying dragon.”",
+    "ja": "金閣寺も銀閣寺も、この相国寺を大本山とする禅の一派に属する。法を説く法堂の天井には、とぐろを巻く龍。堂内に音が反響することから「鳴き龍」と呼ばれる。法堂の公開日を確かめて訪ねたい。"
+  },
+  "Kyoto|0x6001a9f5c1515dcf:0x95b9251e85d96323": {
+    "en": "Osawa Pond helps explain why this Shingon Buddhist temple feels like an imperial retreat: it grew out of Emperor Saga’s villa. Courtiers enjoyed the moon from boats here. Look across the water to imagine the pleasure of seeing the moon twice, once in the sky and once in its reflection.",
+    "ja": "大沢池を抱く大覚寺は、嵯峨天皇の離宮を前身とする真言宗の寺。宮廷の人々は舟を浮かべて月を愛でた。空の月と水に映る月を一緒に眺める楽しみは、今も観月の行事に受け継がれている。"
+  },
+  "Kyoto|0x600108ca8f9b80b3:0xaa2b01ebdb651688": {
+    "en": "The name means “hall of thirty-three bays”: it counts the spaces between the columns. Inside, a seated Thousand-Armed Kannon is flanked by a thousand standing figures. In Buddhism those many arms express compassion reaching people in countless kinds of distress.",
+    "ja": "「三十三」は、長い堂の内陣に並ぶ柱と柱の間の数。中央の千手観音坐像を千体の立像が左右から囲む。数えきれないほどの手は、さまざまな苦しみに手を差し伸べる観音さまの慈悲を表す。"
+  },
+  "Kyoto|0x600108a75314e2a3:0xf4e42caa95cddc94": {
+    "en": "In Kyoto you may hear this temple called O-nishi-san, an affectionate name for “the western one.” Two great halls stand side by side. The Goeido honours Shinran, the teacher whose followers formed this Buddhist tradition; the Amida Hall enshrines Amida Buddha, at the heart of his teaching.",
+    "ja": "京都で親しみを込めて「お西さん」と呼ばれる西本願寺。並んで建つ二つのお堂のうち、御影堂は浄土真宗の宗祖・親鸞聖人を、阿弥陀堂は教えの中心となる阿弥陀如来をお祀りする。"
   }
 };
