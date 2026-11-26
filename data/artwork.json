@@ -278,5 +278,131 @@
     "sourceFolder": "437459113243",
     "sourceName": "rooftop-lounge.webp",
     "sha256": "6769ce8019eeef53051317a142a46fe0ee84667032067bc769b044f8179c3cb2"
+  },
+  {
+    "id": "soba",
+    "file": "assets/images/genre-heroes/soba.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "そば_ざるそばを味わう女性と東京タワー_soba_v1.png",
+    "sourceFileId": "2613397616485",
+    "sourceSha1": "5a226e331af9cd3f5bcaae80006de190a56ac092",
+    "sha256": "da484ea70059d998dee81f7ab90be36e290831c5e14091a5b1a3852578f64a9f"
+  },
+  {
+    "id": "tsukemen",
+    "file": "assets/images/genre-heroes/tsukemen.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "つけ麺_麺を楽しむ女性と東京タワー_tsukemen_v1.png",
+    "sourceFileId": "2613590420853",
+    "sourceSha1": "bc645da3a0241c82e744b747750eac7fa173af67",
+    "sha256": "7022e693266eb3827b1b8afd7e6b39f44ffd3c0a79793702e1044de29ea28d1c"
+  },
+  {
+    "id": "event-venue",
+    "file": "assets/images/genre-heroes/event-venue.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "イベント会場_音楽を楽しむ女性と東京タワー_event-venue_v1.png",
+    "sourceFileId": "2613324018224",
+    "sourceSha1": "9940f86e5e57d208ad7ed632861f9948e7c70992",
+    "sha256": "d8ae3e50c6e4b2413ae864c574cfea3764530fd6af91adba16cff6d019560f70"
+  },
+  {
+    "id": "indian",
+    "file": "assets/images/genre-heroes/indian.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "インド料理_カレーとナンを楽しむ女性と東京タワー_indian_v1.png",
+    "sourceFileId": "2613316052555",
+    "sourceSha1": "84342aaa665f1b25fd53dae85dd4df85448336e3",
+    "sha256": "bf218c1c5f291b6444eaa4b0eb5be6913f56e824a075669decb3e8283c6c7378"
+  },
+  {
+    "id": "coffee-cafe",
+    "file": "assets/images/genre-heroes/coffee-cafe.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "カフェ_コーヒーを楽しむ女性と東京タワー_coffee-cafe_v1.png",
+    "sourceFileId": "2613530257573",
+    "sourceSha1": "88f3581ea6d83d6c4b7f05a18f8358c9798262a5",
+    "sha256": "ff645a187fa33563bdf6c382a8d0d963bf790de86782d702b1d47db387eed188"
+  },
+  {
+    "id": "hotel-cafe-bar",
+    "file": "assets/images/genre-heroes/hotel-cafe-bar.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "カフェ・ホテルバー_ラウンジでくつろぐ女性と東京タワー_hotel-cafe-bar_v1.png",
+    "sourceFileId": "2613248355835",
+    "sourceSha1": "e614d767a6a8af91a286fcfe9c840f57e325cf68",
+    "sha256": "8a64243e70eefda664fa5eb2caca2dbd898ee141742cd989db076841a7fd7946"
+  },
+  {
+    "id": "curry",
+    "file": "assets/images/genre-heroes/curry.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "カレー_カレーを楽しむ女性と東京タワー_curry_v1.png",
+    "sourceFileId": "2613267479743",
+    "sourceSha1": "0d0b01f090dcfc2fbc70d5b21a5d0028df47f915",
+    "sha256": "57c897994679d23707312759c09ea6d3c8e7957e25ca33b5cb2c3db9b8cd382d"
+  },
+  {
+    "id": "street-food",
+    "file": "assets/images/genre-heroes/street-food.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "ストリートフード_たこ焼きを楽しむ女性と東京タワー_street-food_v1.png",
+    "sourceFileId": "2613328146120",
+    "sourceSha1": "cb138e6bc2cb9791d83f9744dedb13609b0c6304",
+    "sha256": "b3a5eacbd5f5ce23de6d7843bf1c58cc464fb3b2e95786b4020b40255aca9b1c"
+  },
+  {
+    "id": "cocktail-bar",
+    "file": "assets/images/genre-heroes/cocktail-bar.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "バー_カクテルを楽しむ女性と東京タワー_cocktail-bar_v1.png",
+    "sourceFileId": "2614116027864",
+    "sourceSha1": "f963d9da1be7f63dda3d969a42520b1f22341ca5",
+    "sha256": "0037d307e12a59be07da42dd8708a97b82cdf1db34b5c7e8418a53fd79905eca"
+  },
+  {
+    "id": "music-bar",
+    "file": "assets/images/genre-heroes/music-bar.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "バー・音楽_レコードを楽しむ女性と東京タワー_music-bar_v1.png",
+    "sourceFileId": "2615643599419",
+    "sourceSha1": "e8e9d902d16c1625c76f2fa542481642f78f42f4",
+    "sha256": "86f05f92cfe429a357c124e5f4820fd7b04c404e4f02c74cd46198d56590bc52"
+  },
+  {
+    "id": "bakery-cafe",
+    "file": "assets/images/genre-heroes/bakery-cafe.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "ベーカリー・カフェ_パンとコーヒーを楽しむ女性と東京タワー_bakery-cafe_v1.png",
+    "sourceFileId": "2613392203173",
+    "sourceSha1": "6ead13734308c3bfa8795e9b3c790d5dc194a4a0",
+    "sha256": "0beedc8f091f74c6e5f1db9c20494f95fc2c62128498d00445aae9a11d285d6c"
+  },
+  {
+    "id": "live-house",
+    "file": "assets/images/genre-heroes/live-house.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "ライブハウス_演奏を楽しむ女性と東京タワー_live-house_v1.png",
+    "sourceFileId": "2613331283565",
+    "sourceSha1": "f1b4af5ba7efac53a5d82d807229d26e5280bfae",
+    "sha256": "e5edcdc3076e82e5dc2aefcc97701381b8215daf07e576c228d1d8868ca6f60b"
+  },
+  {
+    "id": "gyoza",
+    "file": "assets/images/genre-heroes/gyoza.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "中華・餃子_焼き餃子を楽しむ女性と東京タワー_gyoza_v1.png",
+    "sourceFileId": "2613731550040",
+    "sourceSha1": "7984fcca511376d419ec0ac096711a2c1524a726",
+    "sha256": "2c959198ab4ac382943bcf3b84a0b6c98ca3c969273b668e3565e59e4dbf5ff7"
+  },
+  {
+    "id": "tempura",
+    "file": "assets/images/genre-heroes/tempura.webp",
+    "sourceFolder": "437537871758",
+    "sourceName": "天ぷら_揚げたてを味わう女性と東京タワー_tempura_v1.png",
+    "sourceFileId": "2613346358143",
+    "sourceSha1": "5e788537e8e4ca1bbd92860ecaa0633a5b3e2667",
+    "sha256": "96cb2a73c2debc09a4232e70bf7a477da4d9332cddbb2f7c1ffe0430638ca4e2"
   }
 ]

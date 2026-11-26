@@ -3,7 +3,7 @@ import { visitorNotes } from './visitor-notes.mjs?v=hibiya';
 import { recordPlaceSave, saveCountsEnabled } from './save-count.mjs';
 import { readPersonalRoutes, writePersonalRoutes } from './route-library.mjs';
 import {collectionArt} from './genre-art.mjs';
-import {GROUPS,readState,stateURL,matchPlaces,genreCats,mapURL} from './core.mjs?v=regional-order';
+import {GROUPS,readState,stateURL,matchPlaces,genreCats,mapURL} from './core.mjs?v=box-genre-heroes';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safe=u=>/^https?:\/\//i.test(u||'')?esc(u):'#';
 let personalRoutes = readPersonalRoutes();
